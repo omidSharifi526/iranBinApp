@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/iranBinApp/static/css/main.073c9b0a.css",
+    "main.js": "/iranBinApp/static/js/main.f967e119.js",
+    "static/js/787.14aa47b4.chunk.js": "/iranBinApp/static/js/787.14aa47b4.chunk.js",
+    "static/media/logo.svg": "/iranBinApp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/iranBinApp/index.html",
+    "main.073c9b0a.css.map": "/iranBinApp/static/css/main.073c9b0a.css.map",
+    "main.f967e119.js.map": "/iranBinApp/static/js/main.f967e119.js.map",
+    "787.14aa47b4.chunk.js.map": "/iranBinApp/static/js/787.14aa47b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.f967e119.js"
+  ]
+}
