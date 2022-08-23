@@ -1,0 +1,43 @@
+.Container{
+    width: 80%;
+    min-height: 400px;
+    
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+
+.mLogo-fPage{
+width:50%;
+min-height: 200px;
+
+}
+.sarv-p{
+    font-size: 30px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.ibspam{
+    font-weight: 700;
+ 
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    color: green;
+}
+.com-spam{
+font-weight: 600;
+font-size: 1.5rem;
+color: indigo;
+}
+.safiran-img{
+    margin-top: 40px;
+    width: 100px;
+    height:110px;
+}
