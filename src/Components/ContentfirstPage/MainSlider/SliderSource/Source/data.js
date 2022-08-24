@@ -14,25 +14,25 @@ export const CityData=[
     },
     {
         id:2,
-        name:"ghazvin",
+        name:"Ghazvin",
         imgSrc:ghazvin
 
     },
     {
         id:3,
-        name:"lorestan",
+        name:"Lorestan",
         imgSrc:lor
 
     },
     {
         id:4,
-        name:"shiraz",
+        name:"Shiraz",
         imgSrc:shir
 
     }
     ,{
         id:5,
-        name:"kordestan",
+        name:"Kordestan",
         imgSrc:kord
     }
 ] 
