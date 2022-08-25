@@ -9,6 +9,7 @@
   
   
 }
+
 .sectionsHeader{
     width: 20%;
     
@@ -19,7 +20,9 @@
     align-items: center;
     justify-content: start;
     cursor: pointer;
-    transition: all ease 1s;
+   text-decoration: none;
+   
+
     p{
         color: antiquewhite;
        
@@ -32,3 +35,4 @@
 
 
 }
+

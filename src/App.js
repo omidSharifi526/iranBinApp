@@ -1,17 +1,42 @@
+import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Header from "./Components/Header/Header";
-//import MainContent from "./Components/ContentfirstPage/MainContent";
-import Footer from "./Components/Footer/Footer";
-import MainSlider from '../src/Components/ContentfirstPage/MainSlider/MainSlider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Home from './Pages/Home';
+import PlayGame from './Pages/PlayGame';
+import Login from './Pages/Login';
+import NotFound from './Pages/NotFound';
+
+
+
 
 
 
 
 function App() {
   return (
-    <div >
-      <Header>
+    <>
+    <Router>
+      <Routes>
+        <Route path='/'  element={<Home/>} />
+        <Route path='/playgame' element={<PlayGame/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
+    </Router>
+
+    
+
+    
+
+    </>
+
+
+
+
+
+
+      /* <Header>
       
 
       </Header>
@@ -21,10 +46,11 @@ function App() {
      
       <Footer>
 
-      </Footer>
+      </Footer> */
       
       
-    </div>
+      
+    
   );
 }
 
