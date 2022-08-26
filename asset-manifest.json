@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/iranBinApp/static/css/main.fe97b8c6.css",
-    "main.js": "/iranBinApp/static/js/main.bbb4605d.js",
+    "main.css": "/iranBinApp/static/css/main.d55e5155.css",
+    "main.js": "/iranBinApp/static/js/main.0d306f3e.js",
     "static/js/787.14aa47b4.chunk.js": "/iranBinApp/static/js/787.14aa47b4.chunk.js",
     "static/media/esfahan.jpg": "/iranBinApp/static/media/esfahan.900628a121b0b95dc149.jpg",
     "static/media/shairaz.jpg": "/iranBinApp/static/media/shairaz.4ac8d250b652ae41786a.jpg",
@@ -9,12 +9,12 @@
     "static/media/ghazvin.jpg": "/iranBinApp/static/media/ghazvin.8878e65954eda2706414.jpg",
     "static/media/kordestan-2.jpg": "/iranBinApp/static/media/kordestan-2.23ffb30d132e6ef252bb.jpg",
     "index.html": "/iranBinApp/index.html",
-    "main.fe97b8c6.css.map": "/iranBinApp/static/css/main.fe97b8c6.css.map",
-    "main.bbb4605d.js.map": "/iranBinApp/static/js/main.bbb4605d.js.map",
+    "main.d55e5155.css.map": "/iranBinApp/static/css/main.d55e5155.css.map",
+    "main.0d306f3e.js.map": "/iranBinApp/static/js/main.0d306f3e.js.map",
     "787.14aa47b4.chunk.js.map": "/iranBinApp/static/js/787.14aa47b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe97b8c6.css",
-    "static/js/main.bbb4605d.js"
+    "static/css/main.d55e5155.css",
+    "static/js/main.0d306f3e.js"
   ]
 }
