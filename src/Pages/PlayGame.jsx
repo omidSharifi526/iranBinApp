@@ -1,6 +1,7 @@
 import React from 'react';
 import './PlayGameStyles/PlayGame-Style.scss'
 import Header from '../Components/Header/Header';
+import ListOfCitys from './GameSource/Components/ListOfCitys';
 
 
 const PlayGame = () => {
@@ -9,9 +10,9 @@ const PlayGame = () => {
      <Header/>
     <div className='Main-Container'>
        
-        <h1>
-        Play Now ...
-        </h1>
+       
+       <ListOfCitys/>
+
         </div>
 
 
