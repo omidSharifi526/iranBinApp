@@ -23,7 +23,7 @@ const ListOfCitys = () => {
 
     <div className='CityCol'>{Cityes.map((val,index)=>{
         return(<>
-        <motion.div transition={{duration:10,repeat:Infinity,delay:2}} animate={{y:400 } }>
+        <motion.div transition={{duration:16,repeat:Infinity,delay:0}} animate={{y:1000 } }>
             <p key={index}>{val.name}</p>
             </motion.div>
         </>)
@@ -31,7 +31,7 @@ const ListOfCitys = () => {
 
     <div className='CityCol'>{newsort.map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:10,repeat:Infinity,delay:1}} animate={{y:200} }>
+            <motion.div transition={{duration:8,repeat:Infinity,delay:0}} animate={{y:1000} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -40,14 +40,14 @@ const ListOfCitys = () => {
 
     <div className='CityCol'>{Cityes.map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:10,repeat:Infinity}} animate={{y:350} }>
+            <motion.div transition={{duration:7,repeat:Infinity}} animate={{y:1000} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
     })}</div>
-    <div className='CityCol'>{Cityes.map((val,index)=>{
+    <div className='CityCol'>{newsort.map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:10,repeat:Infinity,delay:3}} animate={{y:350} }>
+            <motion.div transition={{duration:16,repeat:Infinity,delay:0}} animate={{y:1000} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
