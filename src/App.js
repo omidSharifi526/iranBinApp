@@ -16,8 +16,8 @@ import NotFound from './Pages/NotFound';
 function App() {
   return (
     <>
-    <Router>
-      <Routes>
+    <Router basename='/'>
+      <Routes >
         <Route path='/'  element={<Home/>} />
         <Route path='/playgame' element={<PlayGame/>}/>
         <Route path='/login' element={<Login/>}/>
