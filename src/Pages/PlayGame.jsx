@@ -12,7 +12,15 @@ const PlayGame = () => {
     <div className='Main-Container'>
        
        
+       <div className='City-Container'>
        <ListOfCitys/>
+
+       </div>
+       
+
+       {/* <button className='btn btn-danger '>Play Now</button> */}
+      
+       
 
         </div>
 

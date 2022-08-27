@@ -1,7 +1,18 @@
 .Main-Container{
     min-height: 450px;
-    background-color: rgb(151, 122, 122);
+    background-color: rgb(238, 220, 220);
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
    
+
+}
+.Buttons-Container{
+   
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   min-height: 100px;
 
 }
