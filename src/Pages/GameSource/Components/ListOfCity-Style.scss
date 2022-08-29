@@ -2,6 +2,92 @@
 
     display: flex;
     flex-direction: column;
+   
+}
+.GameInfo-container{
+    width: 90%;
+    margin: auto;
+   
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    
+
+
+   
+    
+}
+
+.gameMessages-Container{
+    width: 70%;
+    font-size: 14px;
+    transition: all ease 2s;
+    
+    p{
+       
+        padding: 10px;
+        background-color: rgb(59, 59, 35);
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+
+    .showMess{
+        
+        position: relative;
+        
+        transition:  2s  all ease 5s;
+        top: 50px;
+        right: 100px;
+    }
+    .notshowMess{
+        
+        position: relative;
+       
+        top: -600px;
+    
+    }
+    
+
+   
+}
+.userInfo-Container{
+   
+}
+
+.PlayerInfo-Container{
+    width: 80%;
+    margin: auto;
+   
+    
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+
+    .PlayerNameContainer{
+        padding: 5px;
+        span{
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+    }
+    .junContainer{
+        width: 100px;
+        padding-right: 5px;
+        text-align: right;
+        .disJun{
+            margin-top: -5px;
+            font-size: 15px;
+        }
+    }
+    .rateContainer{
+        width: 100px;
+        padding-right: 5px;
+       text-align: right;
+    }
 
 }
 
@@ -14,12 +100,13 @@
     flex-direction: row;
     justify-content: space-around;
    
+   
 
 }
 
 .CityCol{
-    width: 20%;
-    height: 105px;
+    width: 15%;
+    height: 110px;
     overflow: hidden;
     background-color: rgb(34, 34, 56);
     display: flex;
@@ -29,12 +116,12 @@
 
     p{
         color: aliceblue;
-        border-bottom: 1px solid rgba(255, 0, 0, 0.555);
-        font-size: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.555);
+        font-size: 0.5rem;
         text-align: center;
         width: 99%;
         margin: auto;
-        padding-top: 10px;
+        padding-top: 13px;
         padding-bottom: 10px;
         // padding: 10px 0px 1px;
     }
@@ -64,3 +151,8 @@
     align-items: center;
     font-size: 7px !important;
 }
+
+
+
+
+
