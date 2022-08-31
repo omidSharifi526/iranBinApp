@@ -1,8 +1,14 @@
 import React from 'react';
 import Header from '../Components/Header/Header';
-import './PlayGameStyles/PlayGame-Style.scss'
+import './PlayGameStyles/PlayGame-Style.scss';
+
 
 const Login = () => {
+
+  
+
+
+
   return (
     <>
     <Header/>
