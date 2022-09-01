@@ -3,9 +3,10 @@
    
     position: absolute;
     background-color: rgba(92, 56, 56, 0.897);
-    width: 80%;
+    width: 90%;
+    min-height: 550px;
     margin: auto;
-    top: 60px;
+    top: 40px;
     left:4rem;
     border-radius: 10px;
     z-index: 5;
@@ -72,7 +73,7 @@
 
 .namePicker-Container{
 width: 90%;
-height: 60px;
+height: 30px;
 
 text-align: center;
 display: flex;
@@ -81,11 +82,15 @@ align-items: center;
 
 input{
     padding: 3px;
+    
+
 }
 
 ::placeholder{
     font-family: 'iranS';
     font-size: 10px;
+    color: white;
+  
 }
 
 }
@@ -97,8 +102,8 @@ input{
        
         display: block;
         text-align: center;
-        font-size: 1.1rem;
-        padding: 10px ;
+        font-size: .9rem;
+      margin-top: 7px;
         color: aliceblue;
         text-shadow: 0 0 10px yellow;
     }
@@ -132,12 +137,12 @@ input{
        
         min-height: 50px;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 10px;
         span.cityInfo{
             display: block;
             font-size: 12px;
             font-weight: 900;
-            margin-top: 5px;
+            margin-top: 2px;
             margin-bottom: 5px;
             color: aliceblue;
             text-shadow: 0 0 10px yellow;
@@ -163,11 +168,12 @@ input{
 
 
 .btnsPicker-Container{
-height: 50px;
+height: 40px;
 
 text-align: center;
 padding: 5px 1px;
 font-family: 'iranS';
+font-size: 10px !important;
 }
 
 

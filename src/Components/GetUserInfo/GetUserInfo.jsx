@@ -46,7 +46,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
     
        <div className='namePicker-Container'>
         
-        <input   type="text" name="uName" id="uName" placeholder='نام خود را وارد کنید' />
+        <input className='form-control w-50'   type="text" name="uName" id="uName" placeholder='نام خود را وارد کنید' />
        
 
        </div>
@@ -57,7 +57,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
           {
             Cityes.map((val,index)=>{
                 return(<>
-                <div id='City-Cells' className='City-Cells'  onClick={(e)=>{
+                <div id='City-Cells' className='City-Cells btn '  onClick={(e)=>{
                   setCitySelectedinternal( e.target)
                 }}>
                     {val.name}
