@@ -5,12 +5,11 @@
    
 }
 .GameInfo-container{
-    width: 90%;
-    margin: auto;
    
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
+   
+  
+    
+    
     
 
 
@@ -19,32 +18,33 @@
 }
 
 .gameMessages-Container{
-    width: 70%;
+    
+    
+    display: flex;
+    justify-content: center;
+     align-items: flex-end;
     font-size: 14px;
-    transition: all ease 2s;
+  
     
     p{
        
         padding: 10px;
-        background-color: rgb(59, 59, 35);
         border-radius: 5px;
         color: white;
         text-align: center;
     }
 
-    .showMess{
-        
+    .showMess{     
         position: relative;
-        
         transition:  2s  all ease 5s;
         top: 50px;
         right: 100px;
+        background-color: rgb(78, 16, 16);
     }
     .notshowMess{
-        
         position: relative;
-       
         top: -600px;
+        transition:  2s  all ease 5s;
     
     }
     
@@ -52,14 +52,19 @@
    
 }
 .userInfo-Container{
+ 
+//    border: 2px solid black;
+   width: 100%;
+   direction: rtl;
    
 }
 
 .PlayerInfo-Container{
-    width: 80%;
+    width: 90%;
     margin: auto;
+    // background-color: rgb(133, 92, 92);
    
-    
+    // border: 1px solid rgb(105, 0, 0);
     margin-bottom: 5px;
     display: flex;
     flex-direction: row;
@@ -75,19 +80,18 @@
         }
         
     }
-    .junContainer{
-        width: 100px;
-        padding-right: 5px;
-        text-align: right;
-        .disJun{
-            margin-top: -5px;
-            font-size: 15px;
-        }
-    }
+   
     .rateContainer{
         width: 100px;
         padding-right: 5px;
        text-align: right;
+       font-size: 15px;
+       span.rateDisplay{
+        font-size: 12px;
+        font-weight: 800;
+
+
+    }
     }
 
 }

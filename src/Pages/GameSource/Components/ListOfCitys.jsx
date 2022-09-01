@@ -60,9 +60,10 @@ const ListOfCitys = ({playerName,citySelected}) => {
     // console.log('StandadArr',standardArr);
     // console.log('Shuffle Arr',shuffleArr);
     const [showmess,setShowMess]=useState(false);
-    const [score,setScore]=useState(100)
-    const [jun,setJun]=useState(100);
-    const[rate,SetRate]=useState(0);
+    const [score,setScore]=useState(0)
+    const [jun,reduceJun]=useState(['1','2','3','4','5','6','7','8','9','10']);
+    console.log('isjun',jun)
+    // const[rate,SetRate]=useState(0);
 
 
 
@@ -91,7 +92,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
 
       const playIniti=()=>{
-
+        
         setShuffeled(false);
         setShowMess(true);
         createShuffeledList();
@@ -117,7 +118,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
       let sh3=createShuffeledList();
       let sh4=createShuffeledList();
       let sh5=createShuffeledList();
-      console.table(sh1[1]);
+   
 
 
 
@@ -154,26 +155,30 @@ const ListOfCitys = ({playerName,citySelected}) => {
         
        
        <div className='userInfo-Container'>
-       <div className='PlayerNameContainer'>
-        
-        <span > {pName}</span>
-        <span>{CitySels}</span>
-        :
-        <FontAwesomeIcon style={{padding:'5'}} icon={faUser} color="black" />
-        
+
+                <div className='PlayerNameContainer'>  
+                 <span >  <FontAwesomeIcon icon={faUser} color="black" />  {pName} </span>
+                <span>استان شما:{CitySels}</span>
+              
+                </div>
 
 
-        </div>
-        <div className='junContainer'>
-        <span className='disJun'> {jun}:</span>
-        <FontAwesomeIcon style={{padding:'5',fontSize:15}} icon={faHeart} color="red" />
-        </div>
 
-        <div className='rateContainer'>
-        {score}:
-        <FontAwesomeIcon style={{padding:'5'}} icon={faStar} color="yellow" />
-        
-        </div>
+                    <div className='junContainer'>
+                   {jun.map((val,index)=>{
+                    return(<>
+                      <FontAwesomeIcon style={{padding:'5',fontSize:15}} icon={faHeart} color="red" />
+                    </>)
+
+                   })}
+                  
+                    </div>
+
+                    <div className='rateContainer'>
+                    <span className='rateDisplay'>امتیاز شما:</span>
+                    {score}
+                   
+                    </div>
 
 
        </div>

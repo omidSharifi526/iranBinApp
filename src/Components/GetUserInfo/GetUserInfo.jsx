@@ -17,6 +17,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
      // console.log( city)
       CitySelss=city.innerHTML;
       // console.log(typeof CitySelss) ;
+
       
       setcityPicked(CitySelss);
     }
@@ -24,9 +25,16 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
  
 
     const sendData=()=>{
-        stateChanger(false)
+        
        let pname=document.getElementById('uName').value;
-       usernameChanger(pname);
+       if (pname==='' && CitySelss===null) {
+       alert('لطفا مقادیر معتبر وارد کنید')
+       } else {
+        usernameChanger(pname);
+        stateChanger(false)
+       }
+
+       
        setCitySelected(cityPicked)
 
     
