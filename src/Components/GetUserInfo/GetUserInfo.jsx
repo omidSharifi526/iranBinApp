@@ -27,7 +27,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
     const sendData=()=>{
         
        let pname=document.getElementById('uName').value;
-       if (pname==='' && CitySelss===null) {
+       if (pname==='' || CitySelss===null) {
        alert('لطفا مقادیر معتبر وارد کنید')
        } else {
         usernameChanger(pname);

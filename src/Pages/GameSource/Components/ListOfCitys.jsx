@@ -62,21 +62,26 @@ const ListOfCitys = ({playerName,citySelected}) => {
     const [showmess,setShowMess]=useState(false);
     const [score,setScore]=useState(0)
     const [jun,reduceJun]=useState(['1','2','3','4','5','6','7','8','9','10']);
-    console.log('isjun',jun)
+    const[countRound,setCountRound]=useState(10);
+   // console.log('isjun',jun)
     // const[rate,SetRate]=useState(0);
 
-
-
-
-
     
+    const createShuffeledList=()=>{
+      let shufelled=Cityes
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+      // console.log(shufelled);
+      return shufelled;
 
+    }
 
-  
-    
-
-   
-  // console.log(listCityShuffeled_1)
+    let sh1=createShuffeledList();
+    let sh2=createShuffeledList();
+    let sh3=createShuffeledList();
+    let sh4=createShuffeledList();
+    let sh5=createShuffeledList();
 
  
 
@@ -103,32 +108,40 @@ const ListOfCitys = ({playerName,citySelected}) => {
       }
 
 
-      const createShuffeledList=()=>{
-        let shufelled=Cityes
-        .map(value => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
-        // console.log(shufelled);
-        return shufelled;
-
-      }
-
-      let sh1=createShuffeledList();
-      let sh2=createShuffeledList();
-      let sh3=createShuffeledList();
-      let sh4=createShuffeledList();
-      let sh5=createShuffeledList();
+     
    
 
 
+      
+     
+     let heartCnt=10;
+      const updateHeart=()=>{
+       heartCnt--;
+       if (jun.length>=2) {
+        reduceJun(existingItems => {
+          return existingItems.slice(0, existingItems.length - 1)
+          // return existingItems.filter((item, i) => i !== existingItems.length - 1);
+        })
+       }
+        
+      }
 
 
+
+//////create Calculate Rate for display Result
+      const calculateRate=(l1,l2,l3,l4,l5)=>{
+        console.log(l1)
+
+
+      }
      
 
      
       
       const resetGameIniti=()=>{
-        setShuffeled(true)
+        setShuffeled(true);
+        updateHeart();
+        
         // setJun(jun-10)
         // setShowMess(false)
         
@@ -167,7 +180,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
                     <div className='junContainer'>
                    {jun.map((val,index)=>{
                     return(<>
-                      <FontAwesomeIcon style={{padding:'5',fontSize:15}} icon={faHeart} color="red" />
+                    <FontAwesomeIcon icon={faHeart} color="red" />
                     </>)
 
                    })}
