@@ -2,11 +2,13 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faHeart,faStar } from '@fortawesome/free-solid-svg-icons'
+import { faUser,faHeart,faStar } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
 
 import './ListOfCity-Style.scss';
 import { Cityes } from '../Data/GameInfo';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+// import { isDisabled } from '@testing-library/user-event/dist/utils';
+
 
 
 
@@ -47,25 +49,43 @@ import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 
 const ListOfCitys = ({playerName,citySelected}) => {
-
-    const [shuffelled,setShuffeled]=useState(true);
-    let pName=playerName;
-    let CitySels=citySelected;
-
+  let pName=playerName;
+  let CitySels=citySelected;
+ 
 
 
 
+  const [userName,setUserName]=useState('')
+  const [citySelectedDoGet,setcitySelectedDoGet]=useState('');
+  const [shuffelled,setShuffeled]=useState(true);
+  const [score,setScore]=useState(0);
+  const [jun,reduceJun]=useState(['1','2','3','4','5','6','7','8','9','10']);
+  const[countRound,setCountRound]=useState(10);
+  const [showmess,setShowMess]=useState(false);
+  const[countRender,setcountRender]=useState(0);
+  const[shLists,setshLists]=useState([[],[],[],[],[]])
+
+let count=1
+  useEffect(() => {
+    console.log(typeof count)
+    if (countRender==0 && pName=='' && CitySels=='' ) {
+      setUserName('کاربر میهمان')
+      setcitySelectedDoGet('-')
+      setCountRound(countRender)
+
+    } 
+    else if(pName!='' && CitySels!='') {
+      setUserName(pName);
+      setcitySelectedDoGet(CitySels);
+     
+    }
+
+  }, [playerName])
+  
 
     
-    // console.log('StandadArr',standardArr);
-    // console.log('Shuffle Arr',shuffleArr);
-    const [showmess,setShowMess]=useState(false);
-    const [score,setScore]=useState(0)
-    const [jun,reduceJun]=useState(['1','2','3','4','5','6','7','8','9','10']);
-    const[countRound,setCountRound]=useState(10);
-   // console.log('isjun',jun)
-    // const[rate,SetRate]=useState(0);
 
+    let Lshuf1,Lshuf2,Lshuf3,Lshuf4,Lshuf5;
     
     const createShuffeledList=()=>{
       let shufelled=Cityes
@@ -74,6 +94,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
       .map(({ value }) => value);
       // console.log(shufelled);
       return shufelled;
+       
 
     }
 
@@ -85,7 +106,16 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
  
 
+    const resetGameIniti=()=>{
+      setShuffeled(true);
+      updateHeart();
+      calculateRate();
       
+      // setJun(jun-10)
+      // setShowMess(false)
+      
+
+    }
       
      
 
@@ -100,11 +130,72 @@ const ListOfCitys = ({playerName,citySelected}) => {
         
         setShuffeled(false);
         setShowMess(true);
-        createShuffeledList();
+       
+        calculateRate();
       
         
       
         
+      }
+
+   
+      
+
+      //////create Calculate Rate for display Result
+      const calculateRate=()=>{
+   
+       
+        
+          // for (let index = 1; index < shLists.length; index++) {
+            // let[sh1,sh2,sh3,sh4,sh5]=shLists;
+            //  console.log(sh1,sh2,sh3,sh4,sh5);
+            let Lshf1=createShuffeledList()
+            setshLists(shLists[0]=[...Lshf1])
+            console.log('shLists[0]',shLists[0])
+            console.log('this sh :',sh1)
+            
+            //console.log(sh1)
+            
+
+
+
+            //  randomArrays[index].randomList.length=0;
+            //  let newArr=[...res];
+            //  randomArrays[index].randomList.push(newArr)
+            //  WOW Result Corrrrrrrrrect :)
+            //  console.log(index, randomArrays[index].randomList)
+
+            //  randomArrays[index].randomList;
+            // console.log(index,res);
+           
+           
+
+            
+           // console.log(res,'res')
+           // console.log(index,randomArrays[index].randomList);
+
+            
+          // }
+
+        //   let shufList=randomArrays.map((key,value)=>{
+        //     return(<>
+        //     {randomArrays}
+        //     <p></p>
+        //     </>)
+        //   })
+        
+        // console.log(shufList,'created by calculate Btn')
+    // console.table('first',sh1)
+
+      }
+
+      const intRandomList=()=>{
+        if (shLists[0].length==0) {
+          return sh1;
+        } else {
+         return shLists[0]
+        }
+
       }
 
 
@@ -120,7 +211,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
        if (jun.length>=2) {
         reduceJun(existingItems => {
           return existingItems.slice(0, existingItems.length - 1)
-          // return existingItems.filter((item, i) => i !== existingItems.length - 1);
+        
         })
        }
         
@@ -128,25 +219,12 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
 
 
-//////create Calculate Rate for display Result
-      const calculateRate=(l1,l2,l3,l4,l5)=>{
-        console.log(l1)
 
-
-      }
      
 
      
       
-      const resetGameIniti=()=>{
-        setShuffeled(true);
-        updateHeart();
-        
-        // setJun(jun-10)
-        // setShowMess(false)
-        
-
-      }
+     
       
     
 
@@ -168,14 +246,14 @@ const ListOfCitys = ({playerName,citySelected}) => {
         
        
        <div className='userInfo-Container'>
-
+{/*create PlayerName AND City Selected row informations & Wellcome */}
                 <div className='PlayerNameContainer'>  
-                 <span >  <FontAwesomeIcon icon={faUser} color="black" />  {pName} </span>
-                <span>استان شما:{CitySels}</span>
+                 <span >  <FontAwesomeIcon icon={faUser} color="black" />  {userName} عزیز خوش آمدی </span>
+                <span>استان شما:{citySelectedDoGet}</span>
               
                 </div>
 
-
+{/*create PlayerName row informations & Wellcome */}
 
                     <div className='junContainer'>
                    {jun.map((val,index)=>{
@@ -199,10 +277,17 @@ const ListOfCitys = ({playerName,citySelected}) => {
     </div>
     </div>
 
+{/* create Elament of Game!!!!!!!!! */}
+
+
+
     <div className='cityCol-Container'>
 
-    <div className='CityCol'>{(shuffelled?Cityes:sh1).map((val,index)=>{
+
+{/* List 1 of Display Results */}
+    <div  className='CityCol'>{(shuffelled?Cityes:sh1).map((val,index)=>{
         return(<>
+        
         <motion.div transition={{duration:5}} animate={{y:shuffelled?860:0 } }>
             <p key={index}>{val.name}</p>
             </motion.div>
@@ -211,8 +296,8 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
 
 
-
-    <div className='CityCol'>{(shuffelled?Cityes:sh2).map((val,index)=>{
+{/* List 2 of Display Results */}
+    <div className='CityCol' style={{background:'blue'}} >{(shuffelled?Cityes:sh2).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:4}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
@@ -224,7 +309,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
 
 
-
+{/* List 3 of Display Results */}
     <div className='CityCol' style={{background:'green'}}>{(shuffelled?Cityes:sh3).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:2}} animate={{y:shuffelled?860:0} }>
@@ -235,7 +320,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
     </div>
 
 
-
+{/* List 4 of Display Results */}
     <div className='CityCol' style={{background:'gray'}} >{(shuffelled?Cityes:sh4).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:7}} animate={{y:shuffelled?860:0} }>
@@ -245,6 +330,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
     })}
     </div>
 
+{/* List 5 of Display Results */}
     <div className='CityCol' style={{background:'red'}}>{(shuffelled?Cityes:sh5).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:3}} animate={{y:shuffelled?860:0} }>

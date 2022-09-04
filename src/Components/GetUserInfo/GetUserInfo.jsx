@@ -17,8 +17,8 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
      // console.log( city)
       CitySelss=city.innerHTML;
       // console.log(typeof CitySelss) ;
+     
 
-      
       setcityPicked(CitySelss);
     }
     
@@ -64,13 +64,14 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
         <div className='listCityforSelect-container'>
           {
             Cityes.map((val,index)=>{
-                return(<>
-                <div id='City-Cells' className='City-Cells btn '  onClick={(e)=>{
+             
+                return(<div key={index} >
+                <div id='City-Cells' key={index} className='City-Cells btn '  onClick={(e)=>{
                   setCitySelectedinternal( e.target)
                 }}>
                     {val.name}
                 </div>
-                </>)
+                </div>)
             })
           }
             
