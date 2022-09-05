@@ -8,18 +8,18 @@
 }
 .showRules{
    
-    width: 90%;
+    width: 100%;
     min-height: 550px;
     background-color: rgba(10, 5, 54, 0.863);
     position: absolute;
     z-index: 1;
-    top: 75px;
+    top: 55px;
     transition: all ease 1s;
     left: 0; 
   right: 0; 
   margin-left: auto; 
   margin-right: auto; 
-  border-radius: 10px;
+  
   box-shadow: 0 0 15px black;
 }
 .notshowRules{
@@ -58,6 +58,9 @@ align-items: flex-end;
         ul{
             list-style: circle;
             direction: rtl;
+            li{
+                margin-top: 30px;
+            }
         }
         p{
             margin-top: 0;
@@ -78,9 +81,10 @@ align-items: flex-end;
         align-items: center;
         padding: 10px 0px;
         font-family: 'iranS';
-        margin-top: 140px;
+        margin-top: 190px;
         button: {
             font-size: 12px !important;
+            
         };
         
     span{
