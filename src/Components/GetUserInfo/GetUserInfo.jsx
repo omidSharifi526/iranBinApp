@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { faSmile,faHandPointUp,faSignIn } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -7,8 +8,9 @@ import { Cityes } from '../../Pages/GameSource/Data/GameInfo';
 
 
 import '../GetUserInfo/get/user-style.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
+const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected,gamerulesChanger }) => {
 
     const[cityPicked,setcityPicked]=useState('');
     let CitySelss;
@@ -21,7 +23,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
 
       setcityPicked(CitySelss);
     }
-    
+   
  
 
     const sendData=()=>{
@@ -34,8 +36,9 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
         stateChanger(false)
        }
 
-       
+       gamerulesChanger(true)
        setCitySelected(cityPicked)
+      
 
     
         
@@ -47,7 +50,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
   return (
     <div className='GetUserInfo-Container'>
       <div className='required-info-Container'>
-        <span className='text text-warning '>خوش آمدید</span>
+        <span className='text text-warning '>خوش آمدید <FontAwesomeIcon icon={faSmile} color='white' /></span>
        <p> برای ورود  نام بازیکن را وارد و استان مورد نظر را انتخاب کنید</p>
 
       </div>
@@ -60,7 +63,7 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
        </div>
 
        <div className='cityNamePicker-Container'>
-        <span className='forEnter'>برای انتخاب کلیک کنید</span>
+        <span className='forEnter'>برای انتخاب کلیک کنید <FontAwesomeIcon size={15} icon={faHandPointUp}/></span>
         <div className='listCityforSelect-container'>
           {
             Cityes.map((val,index)=>{
@@ -77,15 +80,15 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected }) => {
             
         </div>
         <div className='CityPickedDisplay-container'>
-            <span className='cityInfo'>شهر انتخابی:</span>
-            <span className='Cityselected'>{cityPicked}</span>
+            <span className='cityInfo'> استان شما :</span>
+            <span className='Cityselected '>{cityPicked}</span>
         </div>
 
 
        </div>
 
        <div className='btnsPicker-Container'>
-       <button className='btn btn-primary' onClick={() => sendData()} >ثبت و ورود</button>
+       <button className='btn btn-primary sendBtn ' onClick={() => sendData()} > <span><FontAwesomeIcon  icon={faSignIn}/></span> ثبت و ورود  </button>
        </div>
 
     

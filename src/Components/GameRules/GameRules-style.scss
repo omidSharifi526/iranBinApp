@@ -1,0 +1,77 @@
+.gameRules-container{
+    
+   
+   display: flex;
+   flex-direction: column;
+
+    
+}
+.showRules{
+   
+    width: 90%;
+    min-height: 450px;
+    background-color: rgba(10, 5, 54, 0.842);
+    position: absolute;
+    z-index: 1;
+    top: 75px;
+    transition: all ease 1s;
+    left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 10px;
+  box-shadow: 0 0 15px black;
+}
+.notshowRules{
+    opacity: 0;
+    display: none;
+    transition: all ease 1s;
+
+}
+
+.rulesTexts-Container{
+
+    .rulesText-title{
+        text-align: center;
+        color: white;
+        width: 100%;
+        height: 100px;
+        // background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .rulesText-detail-container{
+        height: 250px;
+        // background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: start;
+        color: aliceblue;
+        align-items: end;
+        padding: 15px 30px;
+    }
+   
+    }
+    .rulesBtn-Container{
+        width: 100%;
+       
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0px;
+        font-family: 'iranS';
+        bottom: {
+            font-size: 12px
+        };
+        
+    span{
+        display: block;
+    }
+    }
+
+
+
