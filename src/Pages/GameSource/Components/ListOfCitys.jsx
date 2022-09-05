@@ -51,6 +51,8 @@ import { Cityes } from '../Data/GameInfo';
 const ListOfCitys = ({playerName,citySelected}) => {
   let pName=playerName;
   let CitySels=citySelected;
+
+
  
 
 
@@ -63,11 +65,37 @@ const ListOfCitys = ({playerName,citySelected}) => {
   const[countRound,setCountRound]=useState(10);
   const [showmess,setShowMess]=useState(false);
   const[countRender,setcountRender]=useState(0);
-  const[shLists,setshLists]=useState([[],[],[],[],[]])
 
-let count=1
+
+  const[sortL1,setsortL1]=useState([...Cityes]);
+  const[sortL2,setsortL2]=useState([...Cityes]);
+  const[sortL3,setsortL3]=useState([...Cityes]);
+  const[sortL4,setsortL4]=useState([...Cityes]);
+  const[sortL5,setsortL5]=useState([...Cityes]);
+
+
+
+  const[shL1,setshL1]=useState([]);
+  const[shL2,setshL2]=useState([]);
+  const[shL3,setshL3]=useState([]);
+  const[shL4,setshL4]=useState([]);
+  const[shL5,setshL5]=useState([]);
+
+
+
   useEffect(() => {
-    console.log(typeof count)
+    
+    
+  
+    return () => {
+      
+    }
+  }, [])
+  
+
+
+  useEffect(() => {
+   
     if (countRender==0 && pName=='' && CitySels=='' ) {
       setUserName('کاربر میهمان')
       setcitySelectedDoGet('-')
@@ -81,11 +109,15 @@ let count=1
     }
 
   }, [playerName])
+
+
+  
+  
   
 
     
 
-    let Lshuf1,Lshuf2,Lshuf3,Lshuf4,Lshuf5;
+    
     
     const createShuffeledList=()=>{
       let shufelled=Cityes
@@ -117,6 +149,36 @@ let count=1
 
     }
       
+    const createInitshuffleLists=()=>{
+
+      let SHL1Created=createShuffeledList();
+      let SHL2Created=createShuffeledList();
+      let SHL3Created=createShuffeledList();
+      let SHL4Created=createShuffeledList();
+      let SHL5Created=createShuffeledList();
+      
+      
+      setshL1(
+        [...SHL1Created]
+      );
+      setshL2(
+        [...SHL2Created]
+      );
+      setshL3(
+        [...SHL3Created]
+      );
+      setshL4(
+        [...SHL4Created]
+      );
+      setshL5(
+        [...SHL5Created]
+      );
+      // console.log('SHL1Created',SHL1Created[1]==citySelectedDoGet);
+      // console.log('SHL2Created',SHL2Created);
+      // console.log('SHL3Created',SHL3Created);
+      // console.log('SHL4Created',SHL4Created);
+      // console.log('SHL5Created',SHL5Created);
+    }
      
 
 
@@ -131,7 +193,7 @@ let count=1
         setShuffeled(false);
         setShowMess(true);
        
-        calculateRate();
+       createInitshuffleLists()
       
         
       
@@ -146,57 +208,14 @@ let count=1
    
        
         
-          // for (let index = 1; index < shLists.length; index++) {
-            // let[sh1,sh2,sh3,sh4,sh5]=shLists;
-            //  console.log(sh1,sh2,sh3,sh4,sh5);
-            let Lshf1=createShuffeledList()
-            setshLists(shLists[0]=[...Lshf1])
-            console.log('shLists[0]',shLists[0])
-            console.log('this sh :',sh1)
-            
-            //console.log(sh1)
-            
 
 
 
-            //  randomArrays[index].randomList.length=0;
-            //  let newArr=[...res];
-            //  randomArrays[index].randomList.push(newArr)
-            //  WOW Result Corrrrrrrrrect :)
-            //  console.log(index, randomArrays[index].randomList)
-
-            //  randomArrays[index].randomList;
-            // console.log(index,res);
            
-           
-
-            
-           // console.log(res,'res')
-           // console.log(index,randomArrays[index].randomList);
-
-            
-          // }
-
-        //   let shufList=randomArrays.map((key,value)=>{
-        //     return(<>
-        //     {randomArrays}
-        //     <p></p>
-        //     </>)
-        //   })
-        
-        // console.log(shufList,'created by calculate Btn')
-    // console.table('first',sh1)
 
       }
 
-      const intRandomList=()=>{
-        if (shLists[0].length==0) {
-          return sh1;
-        } else {
-         return shLists[0]
-        }
-
-      }
+  
 
 
      
@@ -285,9 +304,8 @@ let count=1
 
 
 {/* List 1 of Display Results */}
-    <div  className='CityCol'>{(shuffelled?Cityes:sh1).map((val,index)=>{
+    <div  className='CityCol'>{(shuffelled?sortL1:shL1).map((val,index)=>{
         return(<>
-        
         <motion.div transition={{duration:5}} animate={{y:shuffelled?860:0 } }>
             <p key={index}>{val.name}</p>
             </motion.div>
@@ -297,7 +315,7 @@ let count=1
 
 
 {/* List 2 of Display Results */}
-    <div className='CityCol' style={{background:'blue'}} >{(shuffelled?Cityes:sh2).map((val,index)=>{
+    <div className='CityCol' style={{background:'blue'}} >{(shuffelled?sortL2:shL2).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:4}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
@@ -310,7 +328,7 @@ let count=1
 
 
 {/* List 3 of Display Results */}
-    <div className='CityCol' style={{background:'green'}}>{(shuffelled?Cityes:sh3).map((val,index)=>{
+    <div className='CityCol' style={{background:'green'}}>{(shuffelled?sortL3:shL3).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:2}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
@@ -321,7 +339,7 @@ let count=1
 
 
 {/* List 4 of Display Results */}
-    <div className='CityCol' style={{background:'gray'}} >{(shuffelled?Cityes:sh4).map((val,index)=>{
+    <div className='CityCol' style={{background:'gray'}} >{(shuffelled?sortL4:shL4).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:7}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
@@ -331,7 +349,7 @@ let count=1
     </div>
 
 {/* List 5 of Display Results */}
-    <div className='CityCol' style={{background:'red'}}>{(shuffelled?Cityes:sh5).map((val,index)=>{
+    <div className='CityCol' style={{background:'red'}}>{(shuffelled?sortL1:shL5).map((val,index)=>{
         return(<>
             <motion.div transition={{duration:3}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
