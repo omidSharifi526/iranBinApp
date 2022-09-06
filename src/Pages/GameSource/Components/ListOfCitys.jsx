@@ -62,7 +62,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
   const [citySelectedDoGet,setcitySelectedDoGet]=useState('');
   const [shuffelled,setShuffeled]=useState(true);
   const [score,setScore]=useState(0);
-  const [jun,reduceJun]=useState(['','','','','']);
+  const [jun,reduceJun]=useState(['','','','','','','','','','']);
   const[countRound,setCountRound]=useState(10);
   const [showmess,setShowMess]=useState(false);
   const[countRender,setcountRender]=useState(0);
@@ -214,22 +214,24 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
       arrayOfSelectedCitys.push(citySHL1,citySHL2,citySHL3,citySHL4,citySHL5);
 
       
-     let rateTacker=0;
+    //  let rateTacker=0;
      let iranFound=false;
-
+     console.log(arrayOfSelectedCitys)
       arrayOfSelectedCitys.forEach((val,index)=>{
       if (arrayOfSelectedCitys[index]==yourCity) {
-        rateTacker=rateTacker+10;
+        // rateTacker=rateTacker+10;
        
+       
+       setScore(score+10)
+      
+        console.log(arrayOfSelectedCitys[index]==yourCity);
         
-       
-        console.log(arrayOfSelectedCitys[index]==yourCity)
 
       }
       })
       
 
-      setScore(score+rateTacker);
+      // setScore(score+rateTacker);
 
 
 
