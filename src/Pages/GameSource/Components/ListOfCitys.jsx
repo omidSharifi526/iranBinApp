@@ -130,18 +130,13 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
     }
 
-    let sh1=createShuffeledList();
-    let sh2=createShuffeledList();
-    let sh3=createShuffeledList();
-    let sh4=createShuffeledList();
-    let sh5=createShuffeledList();
-
+    
  
 
     const resetGameIniti=()=>{
       setShuffeled(true);
       updateHeart();
-      calculateRate();
+      calculateRate(shL1,shL2,shL3,shL4,shL5);
       
       // setJun(jun-10)
       // setShowMess(false)
@@ -173,11 +168,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
       setshL5(
         [...SHL5Created]
       );
-      // console.log('SHL1Created',SHL1Created[1]==citySelectedDoGet);
-      // console.log('SHL2Created',SHL2Created);
-      // console.log('SHL3Created',SHL3Created);
-      // console.log('SHL4Created',SHL4Created);
-      // console.log('SHL5Created',SHL5Created);
+   
     }
      
 
@@ -204,10 +195,57 @@ const ListOfCitys = ({playerName,citySelected}) => {
       
 
       //////create Calculate Rate for display Result
-      const calculateRate=()=>{
-   
+      const calculateRate=(SHL1,SHL2,SHL3,SHL4,SHL5)=>{
+       let yourCity=citySelectedDoGet.toString();
+      let citySHL1,citySHL2,citySHL3,citySHL4,citySHL5;
+      let arrayOfSelectedCitys=[];
+
+      citySHL1=SHL1[1].name;
+      citySHL2=SHL2[1].name;
+      citySHL3=SHL3[1].name;
+      citySHL4=SHL4[1].name;
+      citySHL5=SHL5[1].name;
+      
+      arrayOfSelectedCitys.push(citySHL1,citySHL2,citySHL3,citySHL4,citySHL5);
+
+      
+     let rateTacker=0;
+     let iranFound=false;
+
+      arrayOfSelectedCitys.forEach((val,index)=>{
+      if (arrayOfSelectedCitys[index]==yourCity) {
+        rateTacker=rateTacker+10;
        
         
+       
+        console.log(arrayOfSelectedCitys[index]==yourCity)
+
+      }
+      
+      })
+
+      setScore(score+rateTacker);
+
+
+
+
+
+     
+     // console.log('cityRate',cityRate)
+    
+
+
+      // let FlagrateForIran=citySHL1=='ایران' || citySHL2=='ایران'||citySHL3=='ایران'||citySHL4=='ایران'||citySHL5=='ایران';
+    
+
+     
+      
+        // console.log('SHL1Created',citySHL1);
+        // console.log('SHL2Created',citySHL2);
+        // console.log('SHL3Created',citySHL3);
+        // console.log('SHL4Created',citySHL4);
+        // console.log('SHL5Created',citySHL5);
+        // console.log('arrayOfSelectedCitys',arrayOfSelectedCitys)
 
 
 
@@ -224,17 +262,24 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
       
      
-     let heartCnt=10;
+     
       const updateHeart=()=>{
-       heartCnt--;
+       let junCount=10;
        if (jun.length>=2) {
         reduceJun(existingItems => {
           return existingItems.slice(0, existingItems.length - 1)
         
         })
        }
+       else{
+        alert('Please Reset Game')
+
+
+      }
         
       }
+
+     
 
 
 
@@ -306,7 +351,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 {/* List 1 of Display Results */}
     <div  className='CityCol'>{(shuffelled?sortL1:shL1).map((val,index)=>{
         return(<>
-        <motion.div transition={{duration:shuffelled?9:6}} animate={{y:shuffelled?860:0 } }>
+        <motion.div transition={{duration:shuffelled?3:6}} animate={{y:shuffelled?860:0 } }>
             <p key={index}>{val.name}</p>
             </motion.div>
         </>)
@@ -317,7 +362,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 {/* List 2 of Display Results */}
     <div className='CityCol' style={{background:'blue'}} >{(shuffelled?sortL2:shL2).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?11:4}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?6:4}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -330,7 +375,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 {/* List 3 of Display Results */}
     <div className='CityCol' style={{background:'green'}}>{(shuffelled?sortL3:shL3).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?7:2}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?3:2}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -341,7 +386,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 {/* List 4 of Display Results */}
     <div className='CityCol' style={{background:'gray'}} >{(shuffelled?sortL4:shL4).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?12:7}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?6:7}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -351,7 +396,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
 {/* List 5 of Display Results */}
     <div className='CityCol' style={{background:'red'}}>{(shuffelled?sortL1:shL5).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?10:3}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?6:3}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
