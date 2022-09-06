@@ -20,10 +20,9 @@
 .gameMessages-Container{
     
     
-    display: flex;
-    justify-content: center;
-     align-items: flex-end;
+
     font-size: 14px;
+    background-color: red;
   
     
     p{
@@ -34,22 +33,27 @@
         text-align: center;
     }
 
-    .showMess{     
-        position: relative;
-        transition:  2s  all ease 5s;
-        top: 50px;
-        right: 100px;
-        background-color: rgb(78, 16, 16);
-    }
-    .notshowMess{
-        position: relative;
-        top: -600px;
-        transition:  2s  all ease 5s;
     
-    }
     
 
    
+}
+.showMess{     
+    position: absolute;
+    transition:  2s  all ease 7s;
+    top: 100px;
+    left: 100px;
+    background-color: rgb(78, 16, 16);
+    width: 100px;
+    height: 50px;
+    color: white;
+}
+.notshowMess{
+   
+    top: -800px;
+    
+    transition:  2s  all ease 0s;
+
 }
 .userInfo-Container{
  

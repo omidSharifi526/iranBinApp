@@ -6,6 +6,7 @@ import Header from '../Components/Header/Header';
 import ListOfCitys from './GameSource/Components/ListOfCitys';
 import GetUserInfo from '../Components/GetUserInfo/GetUserInfo';
 import GameRules from '../Components/GameRules/GameRules';
+import EndGame from './GameSource/Components/EndGame/EndGame';
 
 
 const PlayGame = () => {
@@ -14,6 +15,7 @@ const PlayGame = () => {
   const [playerName,setPlayerName]=useState('');
   const [citySelected,setCitySelected]=useState('');
   const[rulesGameShow,setrulesGameShow]=useState(false);
+  const[endGame,setEndGameShow]=useState(false)
 
  // let flagss=false
 
@@ -22,13 +24,15 @@ const PlayGame = () => {
     
     {getInfo && <GetUserInfo gamerulesChanger={setrulesGameShow} usernameChanger={setPlayerName} stateChanger={setGetInfo} setCitySelected={setCitySelected} />}
     { rulesGameShow &&<GameRules/>}
+    {endGame && <EndGame playerName={playerName} />}
 
-     <Header/>
+     <Header Userame={playerName}/>
     <div className='Main-Container'>
     
        
        <div className='City-Container'>
-       <ListOfCitys playerName={playerName} citySelected={citySelected} />
+        
+       <ListOfCitys setEndGameShow={setEndGameShow} playerName={playerName} citySelected={citySelected} />
 
        </div>
        

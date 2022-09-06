@@ -33,11 +33,12 @@ const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected,gamerulesChan
        alert('لطفا مقادیر معتبر وارد کنید')
        } else {
         usernameChanger(pname);
-        stateChanger(false)
+        stateChanger(false);
+        gamerulesChanger(true)
+       setCitySelected(cityPicked)
        }
 
-       gamerulesChanger(true)
-       setCitySelected(cityPicked)
+       
       
 
     

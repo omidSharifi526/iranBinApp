@@ -48,9 +48,10 @@ import { Cityes } from '../Data/GameInfo';
 
 
 
-const ListOfCitys = ({playerName,citySelected}) => {
+const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
   let pName=playerName;
   let CitySels=citySelected;
+  
 
 
  
@@ -61,7 +62,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
   const [citySelectedDoGet,setcitySelectedDoGet]=useState('');
   const [shuffelled,setShuffeled]=useState(true);
   const [score,setScore]=useState(0);
-  const [jun,reduceJun]=useState(['1','2','3','4','5','6','7','8','9','10']);
+  const [jun,reduceJun]=useState(['','','','','']);
   const[countRound,setCountRound]=useState(10);
   const [showmess,setShowMess]=useState(false);
   const[countRender,setcountRender]=useState(0);
@@ -133,16 +134,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
     
  
 
-    const resetGameIniti=()=>{
-      setShuffeled(true);
-      updateHeart();
-      calculateRate(shL1,shL2,shL3,shL4,shL5);
-      
-      // setJun(jun-10)
-      // setShowMess(false)
-      
-
-    }
+    
       
     const createInitshuffleLists=()=>{
 
@@ -191,6 +183,19 @@ const ListOfCitys = ({playerName,citySelected}) => {
         
       }
 
+      ///Resort Button
+      const resetGameIniti=()=>{
+        setShowMess(false);
+        setShuffeled(true);
+        updateHeart();
+        calculateRate(shL1,shL2,shL3,shL4,shL5);
+        
+        // setJun(jun-10)
+        // setShowMess(false)
+        
+  
+      }
+
    
       
 
@@ -221,8 +226,8 @@ const ListOfCitys = ({playerName,citySelected}) => {
         console.log(arrayOfSelectedCitys[index]==yourCity)
 
       }
-      
       })
+      
 
       setScore(score+rateTacker);
 
@@ -264,7 +269,10 @@ const ListOfCitys = ({playerName,citySelected}) => {
      
      
       const updateHeart=()=>{
-       let junCount=10;
+        
+       let junCountKamShode=jun.slice(0,jun.length-1);
+       console.log('junCountKamShode',junCountKamShode);
+
        if (jun.length>=2) {
         reduceJun(existingItems => {
           return existingItems.slice(0, existingItems.length - 1)
@@ -272,7 +280,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
         })
        }
        else{
-        alert('Please Reset Game')
+        setEndGameShow(true)
 
 
       }
@@ -293,7 +301,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
     
 
    
-
+//////////////End OFFFFFFF Functionality
   return (
     <>
     <div className='Play-Container'>
@@ -302,9 +310,12 @@ const ListOfCitys = ({playerName,citySelected}) => {
 
     <div className='GameInfo-container' >
         
-    <div className='gameMessages-Container'>    
-        <p className={showmess?'showMess':'notshowMess'}> امتیاز شما : { <FontAwesomeIcon style={{padding:'1'}} icon={faStar} color="yellow" />}  {score}</p>
+    <div className={showmess?'showMess':'notshowMess'}>    
+       {score}
         </div>
+
+
+
         
     <div className='PlayerInfo-Container'>
         
@@ -416,7 +427,7 @@ const ListOfCitys = ({playerName,citySelected}) => {
      <button   className='btn btn-warning w-25 fs-6' onClick={()=>{
         resetGameIniti()
      }} >
-        {jun==100?'Start Game':"Please Sort again"}</button>
+        Resort</button>
 
      <button className='btn btn-danger w-25 fs-6 ' onClick={()=>{}}>Exit</button>
 
