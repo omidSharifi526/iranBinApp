@@ -24,7 +24,7 @@ const PlayGame = () => {
     
     {getInfo && <GetUserInfo gamerulesChanger={setrulesGameShow} usernameChanger={setPlayerName} stateChanger={setGetInfo} setCitySelected={setCitySelected} />}
     { rulesGameShow &&<GameRules/>}
-    {endGame && <EndGame playerName={playerName} />}
+    {endGame && <EndGame setEndGameShow={setEndGameShow} playerName={playerName} />}
 
      <Header Userame={playerName}/>
     <div className='Main-Container'>

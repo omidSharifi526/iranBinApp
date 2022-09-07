@@ -20,9 +20,9 @@ const GameRules = () => {
                 
                
                 <ul>
-                    <li>  <p className='rulesText-detail'> شما به صورت پیش فرض 100 امتیاز دارید  </p></li>
-                    <li> <p className='rulesText-detail'>با انجام هر مرحله 10 امتیاز کسر خواهد شد</p></li>
-                    <li><p className='rulesText-detail'>در صورت وجود نام استان شما در هرکدام از ردیف های وسط به تعداد تکرار 10 امتیاز به شما اضافه خواهد شد</p></li>
+                    <li>  <p className='rulesText-detail'> شما به صورت پیش فرض 10 امتیاز دارید  </p></li>
+                    <li> <p className='rulesText-detail'>با انجام هر مرحله 1 امتیاز از شما کسر خواهد شد</p></li>
+                    <li><p className='rulesText-detail'>در صورت وجود نام استان شما در هرکدام از ردیف های وسط به تعداد تکرار 1 امتیاز به شما اضافه خواهد شد</p></li>
                     <li> <p className='rulesText-detail'>درصورت تکرار نام استان شما در همه ردیف ها برنده جایزه بزرگ ما خواهید شد </p></li>
                     <li><p className='rulesText-detail'>در صورت وجود نام مقدس ایران اسلامی شما برنده جایزه ویژه ما خواهید شد</p>
                     </li>

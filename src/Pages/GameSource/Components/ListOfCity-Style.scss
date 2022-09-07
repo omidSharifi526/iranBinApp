@@ -34,24 +34,34 @@
     }
 
     
-    
 
-   
+
+
 }
 .showMess{     
     position: absolute;
     transition:  2s  all ease 7s;
-    top: 100px;
-    left: 100px;
-    background-color: rgb(78, 16, 16);
+    top: 60px;
+    left: 40px;
+    background-color: rgb(150, 67, 67);
     width: 100px;
     height: 50px;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: black 0px 0px 10px;
+    border-radius: 10px;
 }
 .notshowMess{
-   
-    top: -800px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: -100px;
+    left: 40px;
     transition:  2s  all ease 0s;
 
 }
@@ -101,12 +111,17 @@
 
 }
 .junContainer{
-    background-color: blue;
+    background-color: rgba(195, 0, 255, 0.356);
     display: flex;
     justify-content: space-around;
-    transition: all ease 1s;
+    transition: all ease 3s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.637);
+    margin-bottom: 20px;
+    margin-top: 10px;
     span{
-        transition: all ease 1s;
+        transition: all ease 3s !important;
+        
     }
 }
 
@@ -122,6 +137,15 @@
    
 
 }
+@keyframes cityCol {
+    from{
+        box-shadow: 0px 0px 10px 5px rgb(188, 255, 4);
+    }
+    to{
+        box-shadow: 0px 0px 5px  rgb(0, 0, 0);
+    }
+   
+}
 
 .CityCol{
     width: 15%;
@@ -131,7 +155,10 @@
     display: flex;
     flex-direction: column-reverse;
     border-radius: 4px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    
+    
+    animation: alternate infinite ease-in-out cityCol 0.5s ;
+
 
     p{
         color: aliceblue;
@@ -171,6 +198,10 @@
     justify-content: space-around;
     align-items: center;
     font-size: 7px !important;
+}
+.jun{
+    margin-left: 5px;
+    transition: all ease 1s;
 }
 
 
