@@ -93,11 +93,21 @@
        span.rateDisplay{
         font-size: 12px;
         font-weight: 800;
+        background-color: red;
 
 
     }
     }
 
+}
+.junContainer{
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    transition: all ease 1s;
+    span{
+        transition: all ease 1s;
+    }
 }
 
 

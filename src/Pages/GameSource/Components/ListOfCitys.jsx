@@ -62,6 +62,8 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
   const [citySelectedDoGet,setcitySelectedDoGet]=useState('');
   const [shuffelled,setShuffeled]=useState(true);
   const [score,setScore]=useState(0);
+ const [ToRate,setToRate]=useState(0)
+ 
   const [jun,reduceJun]=useState(['','','','','','','','','','']);
   const[countRound,setCountRound]=useState(10);
   const [showmess,setShowMess]=useState(false);
@@ -76,7 +78,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 
 
 
-  const[shL1,setshL1]=useState([]);
+  const[shL1,setshL1]=useState(null);
   const[shL2,setshL2]=useState([]);
   const[shL3,setshL3]=useState([]);
   const[shL4,setshL4]=useState([]);
@@ -84,17 +86,9 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 
 
 
-  useEffect(() => {
-    
-    
-  
-    return () => {
-      
-    }
-  }, [])
   
 
-
+/////قراردادن اطلاعات در صفحه اصلی
   useEffect(() => {
    
     if (countRender==0 && pName=='' && CitySels=='' ) {
@@ -114,12 +108,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 
   
   
-  
-
-    
-
-    
-    
+///////     createShuffeledList         //////////
     const createShuffeledList=()=>{
       let shufelled=Cityes
       .map(value => ({ value, sort: Math.random() }))
@@ -134,20 +123,19 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
     
  
 
-    
+   
       
     const createInitshuffleLists=()=>{
 
-      let SHL1Created=createShuffeledList();
+    
+
+      let SHL1Created= createShuffeledList();
       let SHL2Created=createShuffeledList();
       let SHL3Created=createShuffeledList();
       let SHL4Created=createShuffeledList();
       let SHL5Created=createShuffeledList();
-      
-      
-      setshL1(
-        [...SHL1Created]
-      );
+
+      setshL1([...SHL1Created])
       setshL2(
         [...SHL2Created]
       );
@@ -160,6 +148,28 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
       setshL5(
         [...SHL5Created]
       );
+
+      
+      let currentRate=0;
+      let myCitys=[SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name];
+     console.log(SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name)
+      for (let index = 0; index < myCitys.length; index++) {
+         if (myCitys[index]==citySelectedDoGet) {
+       
+          currentRate++;
+        //  console.log(currentRate)
+        
+         }
+        
+      }
+
+      setScore(currentRate);
+      console.log(score)
+    
+      
+   
+      
+
    
     }
      
@@ -170,12 +180,11 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 
       
 
-
+/////PlayButtonnnnnnnnnnnnn
       const playIniti=()=>{
         
         setShuffeled(false);
         setShowMess(true);
-       
        createInitshuffleLists()
       
         
@@ -187,8 +196,13 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
       const resetGameIniti=()=>{
         setShowMess(false);
         setShuffeled(true);
-        updateHeart();
-        calculateRate(shL1,shL2,shL3,shL4,shL5);
+        updateHeart(score);
+        // console.log(score);
+        // setToRate(score);
+        // console.log('total',ToRate);
+        setScore(0)
+       
+       
         
         // setJun(jun-10)
         // setShowMess(false)
@@ -214,21 +228,25 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
       arrayOfSelectedCitys.push(citySHL1,citySHL2,citySHL3,citySHL4,citySHL5);
 
       
-    //  let rateTacker=0;
+      let currentRate=0;
      let iranFound=false;
      console.log(arrayOfSelectedCitys)
       arrayOfSelectedCitys.forEach((val,index)=>{
       if (arrayOfSelectedCitys[index]==yourCity) {
         // rateTacker=rateTacker+10;
        
+        currentRate=currentRate+1;
        
-       setScore(score+10)
+
       
         console.log(arrayOfSelectedCitys[index]==yourCity);
         
-
+        setScore(score+currentRate);
       }
+      setScore(score+currentRate);
+     
       })
+      console.log(currentRate)
       
 
       // setScore(score+rateTacker);
@@ -270,10 +288,21 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
       
      
      
-      const updateHeart=()=>{
+      const updateHeart=(score)=>{
         
-       let junCountKamShode=jun.slice(0,jun.length-1);
-       console.log('junCountKamShode',junCountKamShode);
+        console.log('score',score)
+      if (score) {
+
+        for (let index = 0; index < score ; index++) {
+          jun.push('')
+          
+        }
+       
+       
+      } else {
+        let junCountKamShode=jun.slice(0,jun.length-1);
+        console.log('junCountKamShode',junCountKamShode);
+      }
 
        if (jun.length>=2) {
         reduceJun(existingItems => {
@@ -313,7 +342,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
     <div className='GameInfo-container' >
         
     <div className={showmess?'showMess':'notshowMess'}>    
-       {score}
+       {score} X <FontAwesomeIcon icon={faHeart} color="red" />
         </div>
 
 
@@ -335,16 +364,19 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
                     <div className='junContainer'>
                    {jun.map((val,index)=>{
                     return(<>
-                    <FontAwesomeIcon icon={faHeart} color="red" />
+                   <span> <FontAwesomeIcon icon={faHeart} color="red" /></span>
                     </>)
 
                    })}
+                   {jun.length}
                   
                     </div>
 
+
+
                     <div className='rateContainer'>
                     <span className='rateDisplay'>امتیاز شما:</span>
-                    {score}
+                    {/* {score} */}
                    
                     </div>
 
@@ -421,15 +453,15 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 
 
     <div className='playButtons-container'>
-    <button className='btn btn-primary w-25 fs-6'  onClick={()=>{
+    <button disabled={!shuffelled}    className='btn btn-primary w-25 fs-6'  onClick={()=>{
 
      playIniti()}}>Shuffle
 
      </button>
-     <button   className='btn btn-warning w-25 fs-6' onClick={()=>{
+     <button  disabled={shuffelled}  className='btn btn-warning w-25 fs-6' onClick={()=>{
         resetGameIniti()
      }} >
-        Resort</button>
+        Try Again</button>
 
      <button className='btn btn-danger w-25 fs-6 ' onClick={()=>{}}>Exit</button>
 
