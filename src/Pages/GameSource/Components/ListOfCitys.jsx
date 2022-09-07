@@ -270,7 +270,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 {/* List 1 of Display Results */}
     <div  className='CityCol'>{(shuffelled?sortL1:shL1).map((val,index)=>{
         return(<>
-        <motion.div transition={{duration:shuffelled?20:6}} animate={{y:shuffelled?860:0 } }>
+        <motion.div transition={{duration:shuffelled?10:6}} animate={{y:shuffelled?860:0 } }>
             <p key={index}>{val.name}</p>
             </motion.div>
         </>)
@@ -281,7 +281,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 {/* List 2 of Display Results */}
     <div className='CityCol' style={{background:'blue'}} >{(shuffelled?sortL1:shL2).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?25:4}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?12:4}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -294,7 +294,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 {/* List 3 of Display Results */}
     <div className='CityCol' style={{background:'green'}}>{(shuffelled?sortL1:shL3).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?30:2}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?9:2}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -305,7 +305,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 {/* List 4 of Display Results */}
     <div className='CityCol' style={{background:'gray'}} >{(shuffelled?sortL1:shL4).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?14:7}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?8:7}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -315,7 +315,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 {/* List 5 of Display Results */}
     <div className='CityCol' style={{background:'red'}}>{(shuffelled?sortL1:shL5).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?18:3}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?11:3}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
