@@ -70,16 +70,19 @@
 //    border: 2px solid black;
    width: 100%;
    direction: rtl;
+
    
 }
 
 .PlayerInfo-Container{
     width: 90%;
     margin: auto;
-    // background-color: rgb(133, 92, 92);
-   
+     background-color: rgba(133, 92, 92, 0.555);
+   border-radius: 5px;
+   box-shadow: 0px 0px 20px white;
+   color: antiquewhite;
     // border: 1px solid rgb(105, 0, 0);
-    margin-bottom: 5px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
    align-items: center;
@@ -87,10 +90,12 @@
 
     .PlayerNameContainer{
         padding: 5px;
+        margin-bottom: 10px;
         span{
             font-weight: 600;
             font-size: 13px;
             display: block;
+            margin-bottom: 5px;
         }
         
     }
