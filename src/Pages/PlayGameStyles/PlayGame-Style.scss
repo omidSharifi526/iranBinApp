@@ -1,10 +1,12 @@
 .Main-Container{
-    min-height: 550px;
+    min-height: 602px;
     background: url('../../Imgs/Background/Nature.jpg') center center;
+    
     padding-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    filter: brightness(120%);
    
 
 }

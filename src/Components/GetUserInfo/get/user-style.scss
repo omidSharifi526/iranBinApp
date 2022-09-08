@@ -4,9 +4,9 @@
     position: absolute;
     background-color: rgba(92, 56, 56, 0.897);
     width: 100%;
-    min-height: 420px;
+    min-height: 620px;
     margin: auto;
-    top: 55px;
+    
     
     
     z-index: 5;
@@ -162,7 +162,7 @@ input{
         span.Cityselected{ 
             font-size: 15px;
             font-weight: 900;
-            animation: ease-in-out alternate infinite cityAnima .75s;
+            color: yellow;
 
         }
     }

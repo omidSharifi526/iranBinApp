@@ -29,7 +29,7 @@ const PlayGame = () => {
     {showIranGift && <IranGift setShowIranGift={setShowIranGift}/>}
     {endGame && <EndGame  setEndGameShow={setEndGameShow} playerName={playerName} />}
 
-     <Header Userame={playerName}/>
+     {/* <Header Userame={playerName}/> */}
     <div className='Main-Container'>
     
        

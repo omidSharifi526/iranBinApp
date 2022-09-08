@@ -2,11 +2,13 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faHeart,faStar } from '@fortawesome/free-solid-svg-icons';
+import { faUser,faHeart,faStar,faPlay,faRepeat } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
+
 
 import './ListOfCity-Style.scss';
 import { Cityes } from '../Data/GameInfo';
+import { Link } from 'react-router-dom';
 
 
 const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) => {
@@ -117,7 +119,9 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
           console.log('iranflagTrue',myCitys[index])
           setIranFlag(true)
           console.log('myCitys[index]',myCitys[index])
+         setTimeout(() => {
           setShowIranGift(true)
+         }, 7000);
          }
         
       }
@@ -278,7 +282,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 1 of Display Results */}
     <div  className='CityCol'>{(shuffelled?sortL1:shL1).map((val,index)=>{
         return(<>
-        <motion.div transition={{duration:shuffelled?10:6}} animate={{y:shuffelled?860:0 } }>
+        <motion.div transition={{duration:shuffelled?3:4}} animate={{y:shuffelled?860:0 } }>
             <p key={index}>{val.name}</p>
             </motion.div>
         </>)
@@ -289,7 +293,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 2 of Display Results */}
     <div className='CityCol' style={{background:'blue'}} >{(shuffelled?sortL1:shL2).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?12:4}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?5:4}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -302,7 +306,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 3 of Display Results */}
     <div className='CityCol' style={{background:'green'}}>{(shuffelled?sortL1:shL3).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?9:2}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?4:2}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -313,7 +317,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 4 of Display Results */}
     <div className='CityCol' style={{background:'gray'}} >{(shuffelled?sortL1:shL4).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?8:7}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?4:3}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -323,7 +327,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 5 of Display Results */}
     <div className='CityCol' style={{background:'red'}}>{(shuffelled?sortL1:shL5).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?11:3}} animate={{y:shuffelled?860:0} }>
+            <motion.div transition={{duration:shuffelled?4:3}} animate={{y:shuffelled?860:0} }>
                 <p key={index}>{val.name}</p>
                 </motion.div>
             </>)
@@ -335,17 +339,25 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 
 
     <div className='playButtons-container'>
-    <button disabled={!shuffelled}    className='btn btn-primary w-25 fs-6'  onClick={()=>{
+   
+   <button disabled={!shuffelled}    className='PlayBtn btn'  onClick={()=>{
 
-     playIniti()}}>Shuffle
+   playIniti()}}><FontAwesomeIcon className='PlayIcon' color='black' icon={faPlay}/>
 
-     </button>
-     <button  disabled={shuffelled}  className='btn btn-warning w-25 fs-6' onClick={()=>{
+   </button>
+   
+     <button  disabled={shuffelled}   className='repeatBtn btn' onClick={()=>{
         resetGameIniti()
      }} >
-        Try Again</button>
-
-     <button className='btn btn-danger w-25 fs-6 ' onClick={()=>{}}>Exit</button>
+        <FontAwesomeIcon color='black' icon={faRepeat}/>
+        </button>
+       
+    
+    <button className='ExitBtn btn ' onClick={()=>{
+     
+    }}> <Link style={{textDecoration:'none'}} className='' to='/'><span>خروج</span></Link>
+    </button>
+    
 
     </div>
 

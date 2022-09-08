@@ -11,7 +11,7 @@ import '../GetUserInfo/get/user-style.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected,gamerulesChanger }) => {
-
+let cityesWiran=Cityes.length-1;
     const[cityPicked,setcityPicked]=useState('');
     let CitySelss;
 
