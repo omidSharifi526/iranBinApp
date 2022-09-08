@@ -7,6 +7,7 @@ import ListOfCitys from './GameSource/Components/ListOfCitys';
 import GetUserInfo from '../Components/GetUserInfo/GetUserInfo';
 import GameRules from '../Components/GameRules/GameRules';
 import EndGame from './GameSource/Components/EndGame/EndGame';
+import IranGift from './GameSource/Components/IranGift/IranGift';
 
 
 const PlayGame = () => {
@@ -15,7 +16,8 @@ const PlayGame = () => {
   const [playerName,setPlayerName]=useState('');
   const [citySelected,setCitySelected]=useState('');
   const[rulesGameShow,setrulesGameShow]=useState(false);
-  const[endGame,setEndGameShow]=useState(false)
+  const[endGame,setEndGameShow]=useState(false);
+  const[showIranGift,setShowIranGift]=useState(false)
 
  // let flagss=false
 
@@ -24,7 +26,8 @@ const PlayGame = () => {
     
     {getInfo && <GetUserInfo gamerulesChanger={setrulesGameShow} usernameChanger={setPlayerName} stateChanger={setGetInfo} setCitySelected={setCitySelected} />}
     { rulesGameShow &&<GameRules/>}
-    {endGame && <EndGame setEndGameShow={setEndGameShow} playerName={playerName} />}
+    {showIranGift && <IranGift setShowIranGift={setShowIranGift}/>}
+    {endGame && <EndGame  setEndGameShow={setEndGameShow} playerName={playerName} />}
 
      <Header Userame={playerName}/>
     <div className='Main-Container'>
@@ -32,7 +35,7 @@ const PlayGame = () => {
        
        <div className='City-Container'>
         
-       <ListOfCitys setEndGameShow={setEndGameShow} playerName={playerName} citySelected={citySelected} />
+       <ListOfCitys setShowIranGift={setShowIranGift} setEndGameShow={setEndGameShow} playerName={playerName} citySelected={citySelected} />
 
        </div>
        

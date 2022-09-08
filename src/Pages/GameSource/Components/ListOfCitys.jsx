@@ -9,7 +9,7 @@ import './ListOfCity-Style.scss';
 import { Cityes } from '../Data/GameInfo';
 
 
-const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
+const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) => {
   let pName=playerName;
   let CitySels=citySelected;
   
@@ -23,6 +23,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
   const[countRound,setCountRound]=useState(10);
   const [showmess,setShowMess]=useState(false);
   const[countRender,setcountRender]=useState(0);
+  const[iranFlag,setIranFlag]=useState(true);
 
 
   const[sortL1,setsortL1]=useState([...Cityes]);
@@ -102,6 +103,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
 
       
       let currentRate=0;
+      let iranNameFlag=false;
       let myCitys=[SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name];
      console.log(SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name)
       for (let index = 0; index < myCitys.length; index++) {
@@ -111,11 +113,17 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
         //  console.log(currentRate)
         
          }
+         if (myCitys[index]==='ایران') {
+          console.log('iranflagTrue',myCitys[index])
+          setIranFlag(true)
+          console.log('myCitys[index]',myCitys[index])
+          setShowIranGift(true)
+         }
         
       }
 
       setScore(currentRate);
-      console.log(score)
+      // console.log(score)
     
       
    
@@ -216,7 +224,7 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
     <div className='GameInfo-container' >
         
     <div className={showmess?'showMess':'notshowMess'}>    
-       {score} X  <FontAwesomeIcon className='jun' icon={faHeart} color="red" />
+       {score} X  <FontAwesomeIcon className='jun' icon={faStar} color="yellow" />
         </div>
 
 
@@ -238,11 +246,11 @@ const ListOfCitys = ({setEndGameShow,playerName,citySelected}) => {
                     <div className='junContainer'>
                    {jun.map((val,index)=>{
                     return(<>
-                   <span> <FontAwesomeIcon className='jun' icon={faHeart} color="red" /></span>
+                   <span> <FontAwesomeIcon className='jun' icon={faStar} color="yellow" /></span>
                     </>)
 
                    })}
-                   {jun.length}
+                   {jun.length} 
                   
                     </div>
 
