@@ -282,8 +282,8 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 1 of Display Results */}
     <div  className='CityCol'>{(shuffelled?sortL1:shL1).map((val,index)=>{
         return(<>
-        <motion.div transition={{duration:shuffelled?3:4}} animate={{y:shuffelled?860:0 } }>
-            <p key={index}>{val.name}</p>
+        <motion.div transition={{duration:shuffelled?3:3}} animate={{y:shuffelled?1961:41 } }>
+             <div className='City-Cells'><p key={index}>{val.name}</p></div>
             </motion.div>
         </>)
     })}</div>
@@ -291,10 +291,10 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 
 
 {/* List 2 of Display Results */}
-    <div className='CityCol' style={{background:'blue'}} >{(shuffelled?sortL1:shL2).map((val,index)=>{
+    <div className='CityCol'  >{(shuffelled?sortL1:shL2).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?5:4}} animate={{y:shuffelled?860:0} }>
-                <p key={index}>{val.name}</p>
+            <motion.div transition={{duration:shuffelled?3:4}} animate={{y:shuffelled?1961:41} }>
+            <div className='City-Cells'><p key={index}>{val.name}</p></div>
                 </motion.div>
             </>)
     })}
@@ -304,10 +304,10 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 
 
 {/* List 3 of Display Results */}
-    <div className='CityCol' style={{background:'green'}}>{(shuffelled?sortL1:shL3).map((val,index)=>{
+    <div className='CityCol' >{(shuffelled?sortL1:shL3).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?4:2}} animate={{y:shuffelled?860:0} }>
-                <p key={index}>{val.name}</p>
+            <motion.div transition={{duration:shuffelled?2:3}} animate={{y:shuffelled?1961:41} }>
+            <div className='City-Cells'><p key={index}>{val.name}</p></div>
                 </motion.div>
             </>)
     })}
@@ -315,20 +315,20 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 
 
 {/* List 4 of Display Results */}
-    <div className='CityCol' style={{background:'gray'}} >{(shuffelled?sortL1:shL4).map((val,index)=>{
+    <div className='CityCol'  >{(shuffelled?sortL1:shL4).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?4:3}} animate={{y:shuffelled?860:0} }>
-                <p key={index}>{val.name}</p>
+            <motion.div transition={{duration:shuffelled?4:3}} animate={{y:shuffelled?1961:41} }>
+            <div className='City-Cells'><p key={index}>{val.name}</p></div>
                 </motion.div>
             </>)
     })}
     </div>
 
 {/* List 5 of Display Results */}
-    <div className='CityCol' style={{background:'red'}}>{(shuffelled?sortL1:shL5).map((val,index)=>{
+    <div className='CityCol' >{(shuffelled?sortL1:shL5).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?4:3}} animate={{y:shuffelled?860:0} }>
-                <p key={index}>{val.name}</p>
+            <motion.div transition={{duration:shuffelled?2:3}} animate={{y:shuffelled?1961:41} }>
+            <div className='City-Cells'><p key={index}>{val.name}</p></div>
                 </motion.div>
             </>)
     })}
