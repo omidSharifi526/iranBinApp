@@ -2,9 +2,12 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    content-visibility: auto;
+
    
 }
-.GameInfo-container{
+// .GameInfo-container{
    
    
   
@@ -15,12 +18,9 @@
 
    
     
-}
+// }
 
 .gameMessages-Container{
-    
-    
-
     font-size: 14px;
     background-color: red;
   
@@ -33,10 +33,6 @@
         text-align: center;
     }
 
-    
-
-
-
 }
 .showMess{     
     position: absolute;
@@ -45,7 +41,7 @@
     left: 40px;
     background-color: rgb(54, 34, 34);
     width: 100px;
-    height: 50px;
+    height: 80px;
     color: white;
     display: flex;
     justify-content: center;
@@ -70,7 +66,7 @@
 //    border: 2px solid black;
    width: 100%;
    direction: rtl;
-
+padding-bottom: 80px;
    
 }
 
@@ -130,6 +126,7 @@
 
 
 .cityCol-Container{
+    margin-top: 200px;
     width: 99%;
     margin: auto;
     display: flex;
