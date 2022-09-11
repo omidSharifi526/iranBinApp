@@ -37,28 +37,31 @@
 .showMess{     
     position: absolute;
     transition:  2s  all ease 7s;
-    top: 100px;
-    left: 40px;
+    bottom: 140px;
+    right: 30px;
     background-color: rgb(54, 34, 34);
-    width: 100px;
-    height: 80px;
+    width: 200px;
+    height: 150px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: black 0px 0px 10px;
+    box-shadow: black 0px 0px 20px;
     border-radius: 10px;
+    font-size: 40px;
+    z-index: 101;
 }
 .notshowMess{
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 100px;
-    height: 50px;
-    top: -1300px;
-    left: 40px;
-    transition:  2s  all ease 0s;
+    width: 200px;
+    height: 150px;
+    bottom: -1300px;
+    right: 30px;
+    transition:  2s  all ease 1s;
+    z-index: 101;
 
 }
 .userInfo-Container{
@@ -66,32 +69,33 @@
 //    border: 2px solid black;
    width: 100%;
    direction: rtl;
-padding-bottom: 80px;
+// padding-bottom: 80px;
    
 }
 
 .PlayerInfo-Container{
-    width: 90%;
-    margin: auto;
-     background-color: rgba(133, 92, 92, 0.555);
+   width: 90%;
+   margin: auto;
+   background-color: rgba(141, 110, 110, 0.555);
    border-radius: 5px;
    box-shadow: 0px 0px 20px white;
    color: antiquewhite;
     // border: 1px solid rgb(105, 0, 0);
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     display: flex;
     flex-direction: row;
    align-items: center;
    justify-content: space-between;
 
     .PlayerNameContainer{
-        padding: 5px;
-        margin-bottom: 10px;
+        padding: 8px;
+        // margin-bottom: 10px;
+        // background-color: rgb(74, 104, 131);
         span{
             font-weight: 600;
             font-size: 13px;
-            display: block;
-            margin-bottom: 5px;
+            // display: block;
+            // margin-bottom: 5px;
         }
         
     }
@@ -112,14 +116,16 @@ padding-bottom: 80px;
 
 }
 .junContainer{
-    background-color: rgba(195, 0, 255, 0.356);
+    
     display: flex;
     justify-content: space-around;
    
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.637);
-    margin-bottom: 20px;
-    margin-top: 10px;
+   
+   
+    span{
+        font-size: 30px;
+    }
     
 }
 
@@ -140,51 +146,107 @@ padding-bottom: 80px;
 
 .CityCol{
     width: 25%;
-    height: 240px;
+    height: 600px;
     overflow: hidden;
     display: flex;
     flex-direction: column-reverse;
      border-radius: 2px;
     
     margin: 0 1px;
-    background-color: #d7ddff;
+   
     .City-Cells{
-        height: 80px;
+        height: 79px;
         font-size: 20px;
+      width: 100%;
+        background-color: red;
+        align-items: center;
+        // background-image: url('../Data//Imgs//Nature.jpg') ;
+        // background-size: cover;
+        // background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: px 2px;
        
+
+       .City-img{
+        width: 100px;
+        height: 100%;
+       
+        
+        opacity: 100%;
+        
+       }
+ 
+        p{
+        //    position: absolute;
+           
+           
+            color: white;
+            position: relative;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+
+
+        }
+        
         
         
     }
+
+    //////setResponsive for iPad 
+     @media (min-width:768px) {
+        .CityCol{
+            height: 830px;
+           
+        }
+        .City-Cells{
+            background-color: yellow;
+            height: 207px;
+            
+            
+
+
+            .City-img{
+                width: 100%;
+               
+            }
+        }
+     }
     
    
 
-    p{
-        color: rgb(0, 0, 0);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.555);
-        font-size: 0.8rem;
-        font-weight: 900;
-        text-align: center;
-       
-        margin: auto;
-        // padding-top: 13px;
-        // padding-bottom: 10px;
-        min-height: 39px;
+    // p{
+    //     color: rgb(0, 0, 0);
+    //     border-bottom: 1px solid rgba(0, 0, 0, 0.555);
+    //     font-size: 0.8rem;
+    //     font-weight: 900;
+    //     text-align: center;
+      
+    //     margin: auto;
+    //     // padding-top: 13px;
+    //     // padding-bottom: 10px;
+    //     min-height: 39px;
+    //     z-index: 100;
        
        
 
-        // padding: 10px 0px 1px;
-    }
+    //     // padding: 10px 0px 1px;
+    // }
    
 
 }
 
+
 .playButtons-container{
-  min-height: 150px;
+//   min-height: 150px;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    // margin-top: 10px;
     justify-content: space-around;
     align-items: center;
+    flex-direction: row-reverse;
 
 }
 
@@ -206,8 +268,8 @@ padding-bottom: 80px;
 }
 
 .PlayBtn{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: rgb(74, 38, 233);
     display: flex;
@@ -226,7 +288,7 @@ padding-bottom: 80px;
     height: 60px;
     border-radius: 50%;
     background-color: rgb(158, 250, 0);
-    margin-top: 50px;
+    // margin-top: 50px;
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -261,5 +323,146 @@ padding-bottom: 80px;
 
 }
 
+
+.showMaskTop{
+    position: absolute;
+    transition:  2s  all ease 5s ;
+    top: -10px;
+    background-color: rgb(53, 32, 32);
+    width: 100%;
+    height: 200px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    box-shadow: black 0px 0px 20px;
+    border-radius: 10px;
+   
+    p{
+        font-size: 28px;
+        margin: 0 2px;
+        background-color: gray;
+        border-radius: 5px;
+       margin:10px 20px;
+       padding: 10px;
+       text-align: center;
+    }
+}
+.notShowMaskTop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    top: -250px;
+    background-color: rgba(53, 32, 32, 0.493);
+    transition:  2s  all ease 2s;
+    // z-index: 100;
+    p{
+        font-size: 28px;
+        margin: 0 2px;
+        background-color: gray;
+        border-radius: 5px;
+       margin:10px 20px;
+       padding: 10px;
+       text-align: center;
+    }
+}
+.showMaskBottom{
+    position: absolute;
+    transition:  1s  all ease ;
+    bottom: 105px;  
+    background-color: rgb(53, 32, 32);
+    width: 100%;
+    height: 250px;
+    // z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: black 0px 0px 20px;
+    border-radius: 10px;
+    font-size: 30px;
+    color: aliceblue;
+    padding-left: 100px;
+    p{
+        font-size: 30px;
+        margin: 0 2px;
+       
+        border-radius: 5px;
+        
+       
+    }
+
+}
+.notShowMaskBottom{
+    position: absolute;
+    transition:  2s  all ease 2s ;
+    bottom: -300px;  
+    background-color: rgb(53, 32, 32);
+    width: 100%;
+    height: 250px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: black 0px 0px 20px;
+    border-radius: 10px;
+    font-size: 40px;
+    color: aliceblue;
+    padding-left: 100px;
+    p{
+        font-size: 30px;
+        margin: 0 2px;
+       
+        border-radius: 5px;
+        
+       
+    }
+
+}
+.showFlagConter{
+    position: absolute;
+    transition:  2s  all ease 5s;
+    bottom: 140px;
+    right: 240px;
+    background-color: rgb(97, 47, 47);
+    width: 200px;
+    height: 150px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: black 0px 0px 20px;
+    border-radius: 10px;
+    font-size: 40px;
+    z-index: 100;
+    img{
+        transition: all ease 1s;
+    }
+   
+}
+.notShowFlagConter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    bottom: -1300px;
+    right: 240px;
+    transition:  1s  all ease 1s;
+    z-index: 101;
+}
+
+.iranFlagPicture{
+    width: 60px;
+    height: 40px;
+    margin: 0px 5px;
+    
+}
 
 
