@@ -8,7 +8,7 @@ export const Cityes=[
     {id:'7',name:"Booshehr",src:'https://media.mehrnews.com/d/2021/12/07/4/3982170.jpg'},
     {id:'8',name:"Tehran",src:'https://www.tabnak.ir/files/fa/multimedia/1397/10/24/201_798.jpg'},
     {id:'9',name:"Chaharmahal-Bakhtiary",src:'https://cdn.isna.ir/d/2019/02/25/3/57836063.jpg'},
-    {id:'10',name:"KhorasanJonoobi",src:'https://www.mizan.news/wp-content/uploads/2022/01/1519863_546.jpg'},
+    {id:'10',name:"Khorasan-Jonoobi",src:'https://www.mizan.news/wp-content/uploads/2022/01/1519863_546.jpg'},
     {id:'11',name:"KhorasanRazavi",src:'https://www.mizan.news/wp-content/uploads/2022/01/1521518_652.jpg'},
     {id:'12',name:"Khorasan-Shomali",src:'https://img9.irna.ir/old/Image/1398/13980228/3695568/N3695568-7026118.jpg'},
     {id:'13',name:"Khoozestan",src:'https://www.iranhotelonline.com/images/EditorUpload/blog2/98.1&2/khozestan2.jpg'},

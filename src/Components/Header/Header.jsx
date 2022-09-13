@@ -12,7 +12,7 @@ const Header = ({Userame}) => {
        <div className='sectionsHeader'>
        <Link className='sectionsHeader' to="/login">
       <h3 ><FontAwesomeIcon icon={faUserCircle} color="red" /> </h3> 
-      <p>{Userame?Userame:'کابر میهمان'}</p> 
+      <p>{Userame?Userame:'user'}</p> 
       </Link>
       
       </div>
@@ -22,7 +22,7 @@ const Header = ({Userame}) => {
      <div className='sectionsHeader'>
      <Link className='sectionsHeader' to="/playGame">
      <h3><FontAwesomeIcon icon={faGamepad} color="red" /></h3>
-     <p>بازی</p>
+     <p>PlayGame</p>
      </Link>
      </div>
      
@@ -30,7 +30,7 @@ const Header = ({Userame}) => {
     <div className='sectionsHeader'>
     <Link className='sectionsHeader' to="/">
     <h3><FontAwesomeIcon icon={faHome} color="red" /></h3>
-    <p>خانه</p>
+    <p>Home</p>
     </Link>
     </div>
 

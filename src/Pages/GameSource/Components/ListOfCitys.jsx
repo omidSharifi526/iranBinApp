@@ -1,10 +1,12 @@
 import React from 'react';
+import './Sliding-style.scss';
+import './ButtonsGame-style.scss'
 import {motion} from 'framer-motion';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faHeart,faStar,faPlay,faRepeat,faCity } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
-import imgSample from '../Data/Imgs/Nature.jpg';
+import logo from '../../../asset/logo.ico' 
 
 
 // import img from '../Data/GameIn'
@@ -358,11 +360,20 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
               <p>{listCitys[2]}</p>
               <p>{listCitys[3]}</p>
               <p>{listCitys[4]}</p>
-              </div>
+            </div>
 
             <div className={maskBottom?'showMaskBottom':'notShowMaskBottom'}>
-        <div><p><FontAwesomeIcon color='red' icon={faCity}/> {citySelectedDoGet} </p></div>
-        <div>  <FontAwesomeIcon icon={faUser} color="red" /> {userName}</div>
+           <div className='Information-container'>
+           <div className='userName-container'><p><FontAwesomeIcon icon={faUser} color="red" /> {userName}</p></div>
+           <div className='citySelected-container'><p><FontAwesomeIcon color='red' icon={faCity}/> {citySelectedDoGet} </p></div>
+           </div>
+
+           <div className='logo-container'>
+            <img className='logo'  src={logo} alt="" />
+
+
+           </div>
+      
               </div>
     
     
@@ -404,8 +415,8 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
                       <button  disabled={shuffelled}   className='repeatBtn btn' onClick={()=>{
                       resetGameIniti()
                       }} >
-<FontAwesomeIcon color='black' icon={faRepeat}/>
-</button>
+                     <FontAwesomeIcon className='repeatIcon' color='black' icon={faRepeat}/>
+                     </button>
 <button className='ExitBtn btn ' onClick={()=>{
 
 }}> <Link style={{textDecoration:'none'}} className='' to='/'><span>Exit</span></Link>

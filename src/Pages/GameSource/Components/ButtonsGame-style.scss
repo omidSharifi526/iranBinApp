@@ -1,0 +1,78 @@
+.playButtons-container{
+    // height: 30px;
+        display: flex;
+        flex-direction: row;
+        // margin-top: 10px;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+       // background-color: red;
+        padding-bottom: 2px;
+    
+    
+    }
+    
+    
+    
+    
+    
+    .PlayBtn{
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: rgb(193, 190, 204);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        transition: all ease 1s;
+        
+        .PlayIcon{
+            font-size: 35px;
+           margin: auto;
+           text-align: center;
+        }
+    }
+    .repeatBtn{
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: rgb(158, 250, 0);
+        // margin-top: 50px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        transition: all ease 1s;
+        .repeatIcon{
+            font-size: 30px;
+        }
+    }
+    .ExitBtn{
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: rgb(255, 30, 0);
+        
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        outline: 0;
+        border: 0;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        transition: all ease 1s;
+       
+        span{
+            color: white;
+            font-size: 13px;
+            padding-bottom: 5px;
+        }
+        
+    
+    
+    }

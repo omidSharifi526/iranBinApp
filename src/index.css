@@ -1,8 +1,5 @@
-@font-face {
-  font-family: 'iranS';
-  src: url('../src//Fonts//A-Iranian-Sans/Iranian\ Sans.ttf');
-}
 
+/* 
 body {
   margin: 0;
   padding: 0;
@@ -10,10 +7,13 @@ body {
   content-visibility: auto;
  
 
-}
-P,span{
-  font-family: 'iranS';
-  
+} */
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  content-visibility: auto;
 }
 
 

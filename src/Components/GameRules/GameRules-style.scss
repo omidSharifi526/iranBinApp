@@ -1,26 +1,24 @@
 .gameRules-container{
-    
-   
+    background-color: pink;
    display: flex;
    flex-direction: column;
-
+   height: 100%;
+   direction: ltr;
     
 }
 .showRules{
    
     width: 100%;
-    min-height: 670px;
-    background-color: rgba(10, 5, 54, 0.945);
+   
+    background-color:#41436ae7;
     position: absolute;
     z-index: 1;
     top: 0px;
     transition: all ease 1s;
     left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
-  
-  box-shadow: 0 0 15px black;
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 .notshowRules{
     opacity: 0;
@@ -33,7 +31,8 @@
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-align-items: flex-end;
+align-items: flex-start;
+
     .rulesText-title{
         text-align: center;
         color: white;
@@ -43,6 +42,7 @@ align-items: flex-end;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.7rem;
 
     }
     .rulesText-detail-container{
@@ -60,8 +60,8 @@ align-items: flex-end;
             direction: rtl;
             li{
                 margin-top: 30px;
+                }
             }
-        }
         p{
             margin-top: 0;
             margin-bottom: 1rem;
@@ -76,7 +76,7 @@ align-items: flex-end;
     .rulesBtn-Container{
         width: 100%;
        
-       
+     
         display: flex;
         justify-content: center;
         align-items: center;
@@ -84,12 +84,13 @@ align-items: flex-end;
         font-family: 'iranS';
         margin-top: 190px;
         button: {
-            font-size: 12px !important;
+            width: 20% !important;
             
         };
         
     span{
         display: block;
+        font-size: 20px;
     }
     }
 
