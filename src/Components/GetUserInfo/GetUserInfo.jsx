@@ -11,8 +11,10 @@ import '../GetUserInfo/get/user-style.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const GetUserInfo = ({stateChanger,usernameChanger,setCitySelected,gamerulesChanger }) => {
+
 let cityesWiran=Cityes.length-1;
     const[cityPicked,setcityPicked]=useState('');
+    const [inputValue, setInputValue] = useState("");
     let CitySelss;
 
     const setCitySelectedinternal=(city)=>{
@@ -29,8 +31,8 @@ let cityesWiran=Cityes.length-1;
     const sendData=()=>{
         
        let pname=document.getElementById('uName').value;
-       if (pname==='' || CitySelss===null) {
-       alert('لطفا مقادیر معتبر وارد کنید')
+       if (pname=='' || CitySelss===null) {
+       alert(' Please Enter Valid Values..!')
        } else {
         usernameChanger(pname);
         stateChanger(false);
@@ -51,26 +53,27 @@ let cityesWiran=Cityes.length-1;
   return (
     <div className='GetUserInfo-Container'>
       <div className='required-info-Container'>
-        <span className='text text-warning '>خوش آمدید <FontAwesomeIcon icon={faSmile} color='white' /></span>
-       <p> برای ورود  نام بازیکن را وارد و استان مورد نظر را انتخاب کنید</p>
+        <span className='text text-warning '>ٌWellCome  <FontAwesomeIcon icon={faSmile} color='white' /></span>
+       <p>            Please Enter PlayerName and Select Your Province  </p>
 
       </div>
     
        <div className='namePicker-Container'>
         
-        <input className='form-control w-50'   type="text" name="uName" id="uName" placeholder='نام خود را وارد کنید' />
+        <input value={inputValue} className='form-control w-50'   type="text" name="uName" id="uName" placeholder=' Enter PlayerName   '
+         onChange={(e) => setInputValue(e.target.value)} />
        
 
        </div>
 
        <div className='cityNamePicker-Container'>
-        <span className='forEnter'>برای انتخاب کلیک کنید <FontAwesomeIcon size={15} icon={faHandPointUp}/></span>
+        <span className='forEnter'>Click to select <FontAwesomeIcon size={15} icon={faHandPointUp}/></span>
         <div className='listCityforSelect-container'>
           {
             Cityes.map((val,index)=>{
              
                 return(<div key={index} >
-                <div id='City-Cells' key={index} className='City-Cells btn '  onClick={(e)=>{
+                <div class='City-Cellss' key={index} className='City-Cellss btn '  onClick={(e)=>{
                   setCitySelectedinternal( e.target)
                 }}>
                     {val.name}
@@ -81,7 +84,7 @@ let cityesWiran=Cityes.length-1;
             
         </div>
         <div className='CityPickedDisplay-container'>
-            <span className='cityInfo'> استان شما :</span>
+            <span className='cityInfo'> Your Province:</span>
             <span className='Cityselected '>{cityPicked}</span>
         </div>
 
@@ -89,7 +92,7 @@ let cityesWiran=Cityes.length-1;
        </div>
 
        <div className='btnsPicker-Container'>
-       <button className='btn btn-primary sendBtn ' onClick={() => sendData()} > <span><FontAwesomeIcon  icon={faSignIn}/></span> ثبت و ورود  </button>
+       <button className='btn btn-primary sendBtn  ' onClick={() => sendData()} > <span><FontAwesomeIcon size={'2x'}  icon={faSignIn}/></span>  Login   </button>
        </div>
 
     

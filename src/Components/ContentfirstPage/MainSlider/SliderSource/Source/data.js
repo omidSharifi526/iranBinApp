@@ -2,7 +2,7 @@ import es from '../Source/esfahan.jpg';
 import ghazvin from '../Source/ghazvin.jpg';
 import lor from '../Source/lorestan.jpg';
 import shir from '../Source/shairaz.jpg';
-import kord from '../Source/kordestan-2.jpg'
+import kord from '../Source/kordestan-2.jpg';
 
 
 export const CityData=[

@@ -1,16 +1,33 @@
 .iranGift-container{
-    direction: rtl;
+    font-family: 'wink';
+    direction: ltr;
     width: 100%;
     margin: auto;
     
-    min-height: 700px;
-    background-color: yellow;
+height: 100%;
+    background-color: #2a2a2af1;
     position: absolute;
     z-index: 10;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     border-radius: 5px ;
+    color: #fff;
+    h1{
+        font-size: 3rem;
+        
+    }
+    img{
+        width: 50%;
+      height: 500px;
+        margin: auto;
+        border-radius: 10px;
+        margin-bottom: 100px;
+        box-shadow: black 0px 0px 20px;
+    }
+    button{
+        margin-bottom: 100px;
+    }
 
 }

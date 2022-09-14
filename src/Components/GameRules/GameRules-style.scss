@@ -1,16 +1,17 @@
 .gameRules-container{
-    background-color: pink;
+    background-color: rgb(43, 33, 35);
    display: flex;
    flex-direction: column;
    height: 100%;
    direction: ltr;
+   font-family: 'wink';
     
 }
 .showRules{
    
     width: 100%;
    
-    background-color:#41436ae7;
+    background-color: rgba(92, 56, 56, 0.897);
     position: absolute;
     z-index: 1;
     top: 0px;
@@ -38,11 +39,12 @@ align-items: flex-start;
         color: white;
         width: 100%;
         height: 70px;
-        // background-color: gray;
+         
+    background-color: rgb(43, 28, 28);
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.7rem;
+        font-size: 3.5rem;
 
     }
     .rulesText-detail-container{
@@ -53,21 +55,22 @@ align-items: flex-start;
         
         justify-content: start;
         color: aliceblue;
-        align-items: end;
+        
         padding: 15px 30px;
         ul{
-            list-style: circle;
-            direction: rtl;
+            list-style: none;
+            direction: ltr;
             li{
                 margin-top: 30px;
                 }
             }
         p{
             margin-top: 0;
-            margin-bottom: 1rem;
+            
             text-align: right;
-            font-size: 14px;
-            text-align: right;
+            font-size: 1.8rem;
+            text-align: left;
+            font-weight: 700;
         }
         
     }
@@ -81,7 +84,7 @@ align-items: flex-start;
         justify-content: center;
         align-items: center;
         padding: 50px 0px;
-        font-family: 'iranS';
+     
         margin-top: 190px;
         button: {
             width: 20% !important;

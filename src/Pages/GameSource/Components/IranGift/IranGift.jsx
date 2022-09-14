@@ -1,16 +1,19 @@
 import React from 'react'
-import '../IranGift/iranGift-style.scss'
+import '../IranGift/iranGift-style.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import img from '../IranGift/img/recivePrize.jpg'
 const IranGift = ({setShowIranGift}) => {
   return (
    <>
     <div className='iranGift-container'>
-        <h1>ایران</h1>
-        <h1>تبریک..!!</h1>
-        <h3>شما برنده جایزه ویژه ما شدید!!</h3>
-        <img src="https://img.freepik.com/premium-vector/you-win-lettering-pop-art-text-banner_185004-60.jpg" alt="" />
-    <button className='btn btn-info' onClick={()=>{
+        <h1>Iran</h1>
+       
+     
+        <img src={img} alt="" />
+    <button className='btn btn-primary w-25' onClick={()=>{
         setShowIranGift(false)
-    }}>OK</button>
+    }}><FontAwesomeIcon size={'2x'} icon={faThumbsUp}/></button>
     </div>
    
     </>

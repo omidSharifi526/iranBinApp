@@ -4,11 +4,15 @@ import { useState } from 'react';
 import './PlayGameStyles/PlayGame-Style.scss'
 import Header from '../Components/Header/Header';
 import ListOfCitys from './GameSource/Components/ListOfCitys';
+// const ListOfCitys=React.lazy(()=>'./../Components/ListOfCitys')
 import GetUserInfo from '../Components/GetUserInfo/GetUserInfo';
+// const GetUserInfo=React.lazy(()=>'./../Components/GetUserInfo/GetUserInfo.jsx')
 import GameRules from '../Components/GameRules/GameRules';
-import EndGame from './GameSource/Components/EndGame/EndGame';
-import IranGift from './GameSource/Components/IranGift/IranGift';
-
+// const GameRules=React.lazy(()=>('./../Components/GameRules/GameRules.jsx'))
+ import EndGame from './GameSource/Components/EndGame/EndGame';
+//const EndGame=React.lazy(()=>import('./GameSource/Components/EndGame/EndGame'))
+// import IranGift from './GameSource/Components/IranGift/IranGift';
+const IranGift=React.lazy(()=>import('./GameSource/Components/IranGift/IranGift'))
 
 const PlayGame = () => {
 

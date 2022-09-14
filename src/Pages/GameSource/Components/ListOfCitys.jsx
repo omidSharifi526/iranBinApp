@@ -12,8 +12,9 @@ import logo from '../../../asset/logo.ico'
 // import img from '../Data/GameIn'
 
 import './ListOfCity-Style.scss';
-import { Cityes } from '../Data/GameInfo';
+import { CityesAdded } from '../Data/GameInfo';
 import { Link } from 'react-router-dom';
+import { type } from '@testing-library/user-event/dist/type';
 
 
 const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) => {
@@ -36,7 +37,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
   const[maskBottom,setMaskBottom]=useState(false);
 
 
-  const[sortL1,setsortL1]=useState([...Cityes]);
+  const[sortL1,setsortL1]=useState([...CityesAdded]);
  
 
 
@@ -73,7 +74,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
   
 ///////     createShuffeledList         //////////
     const createShuffeledList=()=>{
-      let shufelled=Cityes
+      let shufelled=CityesAdded
       .map(value => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
@@ -114,7 +115,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
       let iranNameNumber=0;
       let myCitys=[SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name];
       setListCiys(myCitys);
-     console.log(SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name)
+    //  console.log(SHL1Created[1].name,SHL2Created[1].name,SHL3Created[1].name,SHL4Created[1].name,SHL5Created[1].name)
       for (let index = 0; index < myCitys.length; index++) {
          if (myCitys[index]==citySelectedDoGet) {
        
@@ -123,10 +124,10 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
         
          }
          if (myCitys[index]==='Iran') {
-          console.log('iranflagTrue',myCitys[index])
+          // console.log('iranflagTrue',myCitys[index])
           iranNameNumber=iranNameNumber+1;
           setIranFlag(true)
-          console.log('myCitys[index]',myCitys[index])
+          // console.log('myCitys[index]',myCitys[index])
         
          }
 
@@ -138,11 +139,12 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
         
       }
       
-      if (iranNameNumber>1) {
+      if (iranNameNumber>0 || currentRate>2) {
         // setiranFlagConter(iranflagConter+1)
-        setTimeout(() => {
+      const timec=  setTimeout(() => {
           setShowIranGift(true)
          }, 7000);
+        
 
       }
 
@@ -237,13 +239,14 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
         
       }
 
-     
+    //  console.log(CityesAdded)
 
       
    
 //////////////End OFFFFFFF Functionality
   return (
     <>
+    
  
     <div className='Play-Container'>
 
@@ -262,7 +265,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 1 of Display Results */}
     <div  className='CityCol'>{(shuffelled?sortL1:shL1).map((val,index)=>{
         return(<>
-        <motion.div transition={{duration:shuffelled?3:3}} animate={{y:shuffelled?5200:0 } }>
+        <motion.div transition={{duration:shuffelled?3:5,easings:5}} animate={{y:shuffelled?10790:0 } }>
              <div className='City-Cells'>
              <img className='City-img' src={val.src} ></img>
               {/* <p>{val.name}</p> */}
@@ -278,7 +281,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 2 of Display Results */}
     <div className='CityCol'  >{(shuffelled?sortL1:shL2).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?2:4}} animate={{y:shuffelled?3131:0} }>
+            <motion.div transition={{duration:shuffelled?2:4}} animate={{y:shuffelled?12650:0} }>
             <div className='City-Cells'>
             <img className='City-img' src={val.src} ></img>
               {/* <p key={index}>{val.name}</p> */}
@@ -296,7 +299,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
     <div className='CityCol' >{(shuffelled?sortL1:shL3).map((val,index)=>{
       
         return(<>
-            <motion.div transition={{duration:shuffelled?5:5}} animate={{y:shuffelled?2098:0} }>
+            <motion.div transition={{duration:shuffelled?5:5}} animate={{y:shuffelled?8925:0} }>
             <div  className='City-Cells'>
             <img className='City-img' src={val.src} ></img>
               {/* <p key={index}>{val.name}</p> */}
@@ -311,7 +314,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 4 of Display Results */}
     <div className='CityCol'  >{(shuffelled?sortL1:shL4).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?4:4}} animate={{y:shuffelled?3131:0} }>
+            <motion.div transition={{duration:shuffelled?4:4}} animate={{y:shuffelled?11620:0} }>
             <div className='City-Cells'>
             <img className='City-img' src={val.src} ></img>
             {/* <p key={index}>{val.name}</p> */}
@@ -324,7 +327,7 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
 {/* List 5 of Display Results */}
     <div className='CityCol' >{(shuffelled?sortL1:shL5).map((val,index)=>{
         return(<>
-            <motion.div transition={{duration:shuffelled?2:3}} animate={{y:shuffelled?6022:0} }>
+            <motion.div transition={{duration:shuffelled?2:3}} animate={{y:shuffelled?7893:0} }>
             <div className='City-Cells'>
             <img className='City-img' src={val.src} ></img>
               {/* <p key={index}>{val.name}</p> */}
@@ -355,7 +358,10 @@ const ListOfCitys = ({setShowIranGift,setEndGameShow,playerName,citySelected}) =
             </div>
 
             <div  className={maskTop?'showMaskTop':'notShowMaskTop'}>
+            
+          
             <p>{listCitys[0]}</p>
+           
               <p>{listCitys[1]}</p>
               <p>{listCitys[2]}</p>
               <p>{listCitys[3]}</p>

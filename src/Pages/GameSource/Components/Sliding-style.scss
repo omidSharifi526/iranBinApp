@@ -45,7 +45,7 @@
     border-radius: 10px;
    
     p{
-        font-size: 28px;
+        font-size: 1.8rem;
         margin: 0 2px;
         background-color: rgb(53, 32, 32);
         box-shadow: black 0px 0px 20px;
@@ -68,7 +68,9 @@
     transition:  2s all ease 1s;
     // z-index: 100;
     p{
-        font-size: 28px;
+        
+            font-size: 1.8rem;
+    
         margin: 0 2px;
         background-color: rgb(53, 32, 32);
         border-radius: 5px;
@@ -93,9 +95,10 @@
     align-items: center;
     box-shadow: black 0px 0px 20px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 1.9rem;
     color: aliceblue;
     padding-left: 100px;
+   
    
     .Information-container{
         height: 100%;
@@ -104,7 +107,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        
+        text-shadow: 0px 0px 30px black;
+        p{
+            font-size: 2.5rem;
+        }
     }
 
     
@@ -118,7 +125,7 @@
             margin-left: 194px;
             padding-bottom: 0px;
             margin-top: -46px;
-            filter: drop-shadow(0px 0px 1px rgb(229, 255, 0));
+         
             // transition:  2s all ease-in-out 4s;
            
             filter: brightness(340%);
@@ -127,17 +134,7 @@
     }
 
 }
-@keyframes shiner {
-    // from{
-    //     filter: brightness(40%);
-    //     filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
 
-    // }
-    to{
-        filter: brightness(350%);
-        filter: drop-shadow(0px 0px 8px rgb(251, 255, 0));
-    }
-}
 
 .notShowMaskBottom{
     position: absolute;
@@ -164,6 +161,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        p{
+            font-size: 2.5rem;
+        }
 
     }
 
@@ -192,7 +192,7 @@
     position: absolute;
     transition:  2s  all ease 5s;
     bottom: 140px;
-    right: 240px;
+    right: 250px;
     
     width: 200px;
     height: 150px;

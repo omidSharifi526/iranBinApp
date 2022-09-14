@@ -29,9 +29,9 @@ const GameRules = () => {
 
 
         <div className='rulesBtn-Container'>
-            <button className='btn btn-warning w-25 p-1 fs-3 fw-600' onClick={()=>{
+            <button className='btn btn-primary w-25 p-1 fs-3 fw-600' onClick={()=>{
        setShow(false)
-        }}><span ><FontAwesomeIcon icon={faThumbsUp}/></span>Let's go  </button>
+        }}><span ><FontAwesomeIcon size={'2x'} icon={faThumbsUp}/></span>Let's go  </button>
         </div>
     </div>
   )
